@@ -1,0 +1,89 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#0F172A"/>
+
+  <!-- Container -->
+  <rect x="20" y="20" width="560" height="360" fill="#1E293B" rx="8"/>
+
+  <!-- Section heading -->
+  <text x="40" y="50" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#E2E8F0">
+    2.1 기능 요구사항
+  </text>
+
+  <!-- Table container -->
+  <g id="table">
+    <!-- Table header background -->
+    <rect x="40" y="70" width="520" height="40" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+
+    <!-- Column dividers in header -->
+    <line x1="100" y1="70" x2="100" y2="110" stroke="#334155" stroke-width="1"/>
+    <line x1="380" y1="70" x2="380" y2="110" stroke="#334155" stroke-width="1"/>
+    <line x1="460" y1="70" x2="460" y2="110" stroke="#334155" stroke-width="1"/>
+
+    <!-- Header text -->
+    <text x="55" y="95" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#E2E8F0">ID</text>
+    <text x="120" y="95" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#E2E8F0">요구사항</text>
+    <text x="395" y="95" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#E2E8F0">우선순위</text>
+    <text x="475" y="95" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#E2E8F0">PRD 참조</text>
+
+    <!-- Row 1 (odd - darker) -->
+    <rect x="40" y="110" width="520" height="36" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+    <line x1="100" y1="110" x2="100" y2="146" stroke="#334155" stroke-width="1"/>
+    <line x1="380" y1="110" x2="380" y2="146" stroke="#334155" stroke-width="1"/>
+    <line x1="460" y1="110" x2="460" y2="146" stroke="#334155" stroke-width="1"/>
+
+    <text x="55" y="133" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">FR-001</text>
+    <text x="115" y="133" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">Markdown → HTML 변환</text>
+    <text x="405" y="133" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">High</text>
+    <text x="480" y="133" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">섹션 8.1</text>
+
+    <!-- Row 2 (even - lighter) -->
+    <rect x="40" y="146" width="520" height="36" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <line x1="100" y1="146" x2="100" y2="182" stroke="#334155" stroke-width="1"/>
+    <line x1="380" y1="146" x2="380" y2="182" stroke="#334155" stroke-width="1"/>
+    <line x1="460" y1="146" x2="460" y2="182" stroke="#334155" stroke-width="1"/>
+
+    <text x="55" y="169" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">FR-002</text>
+    <text x="115" y="169" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">코드 블록 하이라이팅</text>
+    <text x="405" y="169" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">High</text>
+    <text x="480" y="169" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">TRD 2.2</text>
+
+    <!-- Row 3 (odd - darker) -->
+    <rect x="40" y="182" width="520" height="36" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+    <line x1="100" y1="182" x2="100" y2="218" stroke="#334155" stroke-width="1"/>
+    <line x1="380" y1="182" x2="380" y2="218" stroke="#334155" stroke-width="1"/>
+    <line x1="460" y1="182" x2="460" y2="218" stroke="#334155" stroke-width="1"/>
+
+    <text x="55" y="205" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">FR-003</text>
+    <text x="115" y="205" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">GFM 확장 구문 지원</text>
+    <text x="395" y="205" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">Medium</text>
+    <text x="485" y="205" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">-</text>
+
+    <!-- Row 4 (even - lighter) -->
+    <rect x="40" y="218" width="520" height="36" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <line x1="100" y1="218" x2="100" y2="254" stroke="#334155" stroke-width="1"/>
+    <line x1="380" y1="218" x2="380" y2="254" stroke="#334155" stroke-width="1"/>
+    <line x1="460" y1="218" x2="460" y2="254" stroke="#334155" stroke-width="1"/>
+
+    <text x="55" y="241" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">FR-004</text>
+    <text x="115" y="241" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">문서 파일 API 로드</text>
+    <text x="405" y="241" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">High</text>
+    <text x="480" y="241" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">PRD 8.1</text>
+
+    <!-- Row 5 (odd - darker) -->
+    <rect x="40" y="254" width="520" height="36" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+    <line x1="100" y1="254" x2="100" y2="290" stroke="#334155" stroke-width="1"/>
+    <line x1="380" y1="254" x2="380" y2="290" stroke="#334155" stroke-width="1"/>
+    <line x1="460" y1="254" x2="460" y2="290" stroke="#334155" stroke-width="1"/>
+
+    <text x="55" y="277" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">FR-005</text>
+    <text x="115" y="277" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">로딩 상태 표시</text>
+    <text x="395" y="277" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">Medium</text>
+    <text x="480" y="277" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">PRD 11</text>
+  </g>
+
+  <!-- Note text -->
+  <text x="40" y="325" font-family="system-ui, sans-serif" font-size="12" fill="#94A3B8" font-style="italic">
+    테이블은 전체 너비를 사용하며, 짝수/홀수 행에 교차 배경색을 적용합니다.
+  </text>
+</svg>

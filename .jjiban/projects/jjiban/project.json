@@ -1,0 +1,12 @@
+{
+  "id": "jjiban",
+  "name": "jjiban - AI 기반 프로젝트 관리 도구",
+  "description": "로컬 환경에서 실행되는 파일 기반 프로젝트 관리 도구",
+  "version": "0.1.0",
+  "status": "active",
+  "wbsDepth": 4,
+  "createdAt": "2025-12-13T00:00:00.000Z",
+  "updatedAt": "2025-12-18T00:00:00.000Z",
+  "scheduledStart": "2025-12-13",
+  "scheduledEnd": "2026-01-25"
+}

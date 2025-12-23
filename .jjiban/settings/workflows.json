@@ -1,0 +1,79 @@
+{
+  "$schema": "./schemas/workflows.schema.json",
+  "version": "2.0",
+  "states": {
+    "[ ]": { "id": "todo", "label": "시작 전", "labelEn": "Todo", "icon": "pi-inbox", "color": "#6b7280", "severity": "secondary", "progressWeight": 0, "phase": "todo" },
+    "[bd]": { "id": "basic-design", "label": "기본설계", "labelEn": "Basic Design", "icon": "pi-pencil", "color": "#3b82f6", "severity": "info", "progressWeight": 20, "phase": "design" },
+    "[dd]": { "id": "detail-design", "label": "상세설계", "labelEn": "Detail Design", "icon": "pi-file-edit", "color": "#8b5cf6", "severity": "info", "progressWeight": 40, "phase": "design" },
+    "[ap]": { "id": "approve", "label": "승인", "labelEn": "Approve", "icon": "pi-check-square", "color": "#10b981", "severity": "success", "progressWeight": 50, "phase": "design" },
+    "[im]": { "id": "implement", "label": "구현", "labelEn": "Implement", "icon": "pi-code", "color": "#f59e0b", "severity": "warning", "progressWeight": 60, "phase": "implement" },
+    "[vf]": { "id": "verify", "label": "검증", "labelEn": "Verify", "icon": "pi-verified", "color": "#22c55e", "severity": "success", "progressWeight": 80, "phase": "implement" },
+    "[xx]": { "id": "done", "label": "완료", "labelEn": "Done", "icon": "pi-check-circle", "color": "#10b981", "severity": "success", "progressWeight": 100, "phase": "done" },
+    "[an]": { "id": "analysis", "label": "분석", "labelEn": "Analysis", "icon": "pi-search", "color": "#f59e0b", "severity": "warning", "progressWeight": 30, "phase": "design" },
+    "[fx]": { "id": "fix", "label": "수정", "labelEn": "Fix", "icon": "pi-wrench", "color": "#ef4444", "severity": "danger", "progressWeight": 60, "phase": "implement" },
+    "[ds]": { "id": "design", "label": "설계", "labelEn": "Design", "icon": "pi-sitemap", "color": "#3b82f6", "severity": "info", "progressWeight": 30, "phase": "design" }
+  },
+  "commands": {
+    "start": { "label": "시작", "labelEn": "Start", "icon": "pi-play", "severity": "primary" },
+    "draft": { "label": "상세설계", "labelEn": "Draft", "icon": "pi-pencil", "severity": "info" },
+    "approve": { "label": "승인", "labelEn": "Approve", "icon": "pi-check", "severity": "success" },
+    "build": { "label": "구현", "labelEn": "Build", "icon": "pi-wrench", "severity": "warning" },
+    "verify": { "label": "검증", "labelEn": "Verify", "icon": "pi-verified", "severity": "success" },
+    "done": { "label": "완료", "labelEn": "Done", "icon": "pi-check-circle", "severity": "success" },
+    "fix": { "label": "수정", "labelEn": "Fix", "icon": "pi-wrench", "severity": "danger" },
+    "skip": { "label": "건너뛰기", "labelEn": "Skip", "icon": "pi-forward", "severity": "secondary" },
+    "ui": { "label": "UI설계", "labelEn": "UI Design", "icon": "pi-palette", "severity": "info", "isAction": true },
+    "review": { "label": "리뷰", "labelEn": "Review", "icon": "pi-eye", "severity": "secondary", "isAction": true },
+    "apply": { "label": "적용", "labelEn": "Apply", "icon": "pi-check", "severity": "secondary", "isAction": true },
+    "test": { "label": "테스트", "labelEn": "Test", "icon": "pi-bolt", "severity": "warning", "isAction": true },
+    "audit": { "label": "코드리뷰", "labelEn": "Audit", "icon": "pi-search", "severity": "secondary", "isAction": true },
+    "patch": { "label": "패치", "labelEn": "Patch", "icon": "pi-file-edit", "severity": "secondary", "isAction": true }
+  },
+  "workflows": {
+    "development": {
+      "name": "Development Workflow",
+      "states": ["[ ]", "[bd]", "[dd]", "[ap]", "[im]", "[vf]", "[xx]"],
+      "transitions": [
+        { "from": "[ ]", "to": "[bd]", "command": "start" },
+        { "from": "[bd]", "to": "[dd]", "command": "draft" },
+        { "from": "[dd]", "to": "[ap]", "command": "approve" },
+        { "from": "[ap]", "to": "[im]", "command": "build" },
+        { "from": "[im]", "to": "[vf]", "command": "verify" },
+        { "from": "[vf]", "to": "[xx]", "command": "done" }
+      ],
+      "actions": {
+        "[bd]": ["ui"],
+        "[dd]": ["review", "apply"],
+        "[im]": ["test", "audit", "patch"],
+        "[vf]": ["test"]
+      }
+    },
+    "defect": {
+      "name": "Defect Workflow",
+      "states": ["[ ]", "[an]", "[fx]", "[vf]", "[xx]"],
+      "transitions": [
+        { "from": "[ ]", "to": "[an]", "command": "start" },
+        { "from": "[an]", "to": "[fx]", "command": "fix" },
+        { "from": "[fx]", "to": "[vf]", "command": "verify" },
+        { "from": "[vf]", "to": "[xx]", "command": "done" }
+      ],
+      "actions": {
+        "[fx]": ["test", "audit", "patch"],
+        "[vf]": ["test"]
+      }
+    },
+    "infrastructure": {
+      "name": "Infrastructure Workflow",
+      "states": ["[ ]", "[ds]", "[im]", "[xx]"],
+      "transitions": [
+        { "from": "[ ]", "to": "[ds]", "command": "start" },
+        { "from": "[ ]", "to": "[im]", "command": "skip" },
+        { "from": "[ds]", "to": "[im]", "command": "build" },
+        { "from": "[im]", "to": "[xx]", "command": "done" }
+      ],
+      "actions": {
+        "[im]": ["test", "audit", "patch"]
+      }
+    }
+  }
+}

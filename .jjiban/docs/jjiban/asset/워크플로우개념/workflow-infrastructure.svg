@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" width="1100" height="600">
+  <defs>
+    <!-- Arrow markers -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+    <marker id="arrowhead-loop" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#7b1fa2" />
+    </marker>
+    <marker id="arrowhead-dashed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#78909c" />
+    </marker>
+
+    <!-- Filters for shadows -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="600" fill="#fafafa"/>
+
+  <!-- Title -->
+  <text x="550" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#333">
+    infrastructure 카테고리 워크플로우
+  </text>
+
+  <!-- Main Flow -->
+  <g id="main-flow">
+    <!-- Todo -->
+    <rect x="50" y="150" width="120" height="70" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="3" filter="url(#shadow)"/>
+    <text x="110" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1565c0">[ ] Todo</text>
+    <text x="110" y="200" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">작업 접수</text>
+
+    <!-- Arrow: start -->
+    <line x1="170" y1="185" x2="220" y2="185" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="195" y="175" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1565c0">start</text>
+
+    <!-- 설계 (선택) -->
+    <rect x="220" y="150" width="140" height="70" rx="8" fill="#eceff1" stroke="#78909c" stroke-width="3" stroke-dasharray="5,3" filter="url(#shadow)"/>
+    <text x="290" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#78909c">[ds] 설계</text>
+    <text x="290" y="195" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">기술 설계</text>
+    <text x="290" y="212" font-family="Arial, sans-serif" font-size="10" font-style="italic" text-anchor="middle" fill="#999">(선택)</text>
+
+    <!-- Arrow: build -->
+    <line x1="360" y1="185" x2="420" y2="185" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="390" y="175" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#ef6c00">build</text>
+
+    <!-- 구현 (with action box) -->
+    <rect x="420" y="130" width="180" height="110" rx="8" fill="#fff3e0" stroke="#ef6c00" stroke-width="3" filter="url(#shadow)"/>
+    <text x="510" y="160" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#ef6c00">[im] 구현</text>
+    <text x="510" y="180" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">코드 작성</text>
+    <!-- Action indicators -->
+    <rect x="435" y="195" width="70" height="25" rx="4" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1"/>
+    <text x="470" y="212" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#7b1fa2">audit</text>
+    <rect x="515" y="195" width="70" height="25" rx="4" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1"/>
+    <text x="550" y="212" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#7b1fa2">patch</text>
+    <!-- Loop arrow for actions -->
+    <path d="M 585 225 Q 610 260 510 260 Q 430 260 435 225" stroke="#7b1fa2" stroke-width="1.5" stroke-dasharray="4,2" fill="none" marker-end="url(#arrowhead-loop)"/>
+    <text x="510" y="280" font-family="Arial, sans-serif" font-size="10" font-style="italic" text-anchor="middle" fill="#7b1fa2">반복 가능</text>
+
+    <!-- Arrow: done -->
+    <line x1="600" y1="185" x2="670" y2="185" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="635" y="175" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#455a64">done</text>
+
+    <!-- 완료 -->
+    <rect x="670" y="150" width="120" height="70" rx="8" fill="#eceff1" stroke="#455a64" stroke-width="3" filter="url(#shadow)"/>
+    <text x="730" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#455a64">[xx] 완료</text>
+    <text x="730" y="200" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">작업 완료</text>
+  </g>
+
+  <!-- Skip Design Path -->
+  <g id="skip-design">
+    <!-- Curved arrow: skip design -->
+    <path d="M 170 205 Q 290 280 420 205" stroke="#78909c" stroke-width="2" stroke-dasharray="5,3" fill="none" marker-end="url(#arrowhead-dashed)"/>
+    <text x="290" y="270" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#78909c">skip</text>
+  </g>
+
+  <!-- Legend -->
+  <g id="legend" transform="translate(50, 360)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">범례 (Legend)</text>
+
+    <rect x="0" y="25" width="90" height="35" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+    <text x="45" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1565c0">Todo</text>
+
+    <rect x="110" y="25" width="90" height="35" rx="6" fill="#eceff1" stroke="#78909c" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="155" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#78909c">Optional</text>
+
+    <rect x="220" y="25" width="90" height="35" rx="6" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+    <text x="265" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#ef6c00">Implementation</text>
+
+    <rect x="330" y="25" width="90" height="35" rx="6" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+    <text x="375" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7b1fa2">Action</text>
+
+    <rect x="440" y="25" width="90" height="35" rx="6" fill="#eceff1" stroke="#455a64" stroke-width="2"/>
+    <text x="485" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#455a64">Done</text>
+  </g>
+
+  <!-- Command Types -->
+  <g id="command-types" transform="translate(50, 460)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">명령어 분류</text>
+
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      <tspan font-weight="bold" fill="#333">상태 전환 명령어:</tspan> start, skip, build, done
+    </text>
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      <tspan font-weight="bold" fill="#7b1fa2">상태 내 액션:</tspan> audit, patch (구현 단계) - 반복 가능, 상태 변경 없음
+    </text>
+  </g>
+
+  <!-- Key Features -->
+  <g id="features" transform="translate(600, 360)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">주요 특징</text>
+
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      • 4단계 간소화된 워크플로우
+    </text>
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      • 설계 단계는 선택적 (skip 가능)
+    </text>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      • 구현 단계에서 LLM 코드 리뷰 반복 가능
+    </text>
+    <text x="0" y="105" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      • 인프라/리팩토링 작업에 최적화
+    </text>
+  </g>
+
+  <!-- Footer -->
+  <text x="550" y="570" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#999">
+    JJIban - infrastructure 카테고리 워크플로우 v2.4
+  </text>
+</svg>

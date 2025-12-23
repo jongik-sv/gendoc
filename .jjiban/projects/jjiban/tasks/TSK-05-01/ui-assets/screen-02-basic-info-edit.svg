@@ -1,0 +1,87 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="400" height="300" fill="none" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- TaskBasicInfo Card (Edit Mode) -->
+  <g transform="translate(16, 16)">
+    <!-- Card Background -->
+    <rect width="368" height="268" rx="6" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+
+    <!-- Card Header -->
+    <g transform="translate(16, 16)">
+      <!-- Icon -->
+      <circle cx="8" cy="8" r="8" fill="#3B82F6"/>
+      <text x="8" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF">i</text>
+      <!-- Title -->
+      <text x="28" y="12" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F2937">
+        기본 정보
+      </text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="16" y1="40" x2="352" y2="40" stroke="#E5E7EB" stroke-width="1"/>
+
+    <!-- Fields -->
+    <g transform="translate(16, 56)">
+      <!-- ID Field (Read-only) -->
+      <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">ID</text>
+      <rect x="110" y="0" width="100" height="24" rx="4" fill="#DBEAFE"/>
+      <text x="120" y="16" font-family="Arial, sans-serif" font-size="12" fill="#1E40AF">TSK-05-01</text>
+
+      <!-- Title Field (Edit Mode - InputText) -->
+      <g transform="translate(0, 40)">
+        <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">제목</text>
+        <!-- InputText Background -->
+        <rect x="110" y="-4" width="226" height="32" rx="4" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
+        <!-- Focus shadow -->
+        <rect x="110" y="-4" width="226" height="32" rx="4" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.2" stroke-dasharray="2,2"/>
+        <!-- Text with cursor -->
+        <text x="118" y="16" font-family="Arial, sans-serif" font-size="14" fill="#1F2937">Detail Panel Structure</text>
+        <line x1="288" y1="6" x2="288" y2="18" stroke="#3B82F6" stroke-width="1">
+          <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+        </line>
+
+        <!-- Hint text -->
+        <text x="110" y="46" font-family="Arial, sans-serif" font-size="11" fill="#9CA3AF">
+          Enter로 저장, ESC로 취소
+        </text>
+      </g>
+
+      <!-- Category Field (Normal) -->
+      <g transform="translate(0, 112)">
+        <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">카테고리</text>
+        <rect x="110" y="0" width="120" height="24" rx="4" fill="#DBEAFE"/>
+        <text x="120" y="16" font-family="Arial, sans-serif" font-size="12" fill="#1E40AF">Development</text>
+        <!-- Edit icon -->
+        <g transform="translate(310, 4)">
+          <path d="M 0 6 L 3 0 L 9 6 L 6 12 Z" fill="none" stroke="#9CA3AF" stroke-width="1"/>
+          <line x1="3" y1="0" x2="0" y2="0" stroke="#9CA3AF" stroke-width="1"/>
+        </g>
+      </g>
+
+      <!-- Priority Field (Normal) -->
+      <g transform="translate(0, 148)">
+        <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">우선순위</text>
+        <rect x="110" y="0" width="60" height="24" rx="4" fill="#FEF3C7"/>
+        <text x="120" y="16" font-family="Arial, sans-serif" font-size="12" fill="#92400E">High</text>
+        <!-- Edit icon -->
+        <g transform="translate(310, 4)">
+          <path d="M 0 6 L 3 0 L 9 6 L 6 12 Z" fill="none" stroke="#9CA3AF" stroke-width="1"/>
+          <line x1="3" y1="0" x2="0" y2="0" stroke="#9CA3AF" stroke-width="1"/>
+        </g>
+      </g>
+
+      <!-- Assignee Field (Normal) -->
+      <g transform="translate(0, 184)">
+        <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">담당자</text>
+        <text x="110" y="12" font-family="Arial, sans-serif" font-size="14" fill="#9CA3AF">미배정</text>
+        <!-- Edit icon -->
+        <g transform="translate(310, 4)">
+          <path d="M 0 6 L 3 0 L 9 6 L 6 12 Z" fill="none" stroke="#9CA3AF" stroke-width="1"/>
+          <line x1="3" y1="0" x2="0" y2="0" stroke="#9CA3AF" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "members": [
+    {
+      "id": "admin",
+      "name": "관리자",
+      "email": "admin@project.com",
+      "role": "admin",
+      "avatar": null,
+      "active": true
+    }
+  ],
+  "roles": [
+    { "id": "admin", "name": "관리자", "permissions": ["all"] },
+    { "id": "member", "name": "멤버", "permissions": ["read", "write"] },
+    { "id": "viewer", "name": "뷰어", "permissions": ["read"] }
+  ]
+}

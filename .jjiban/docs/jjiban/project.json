@@ -1,0 +1,30 @@
+{
+  "id": "jjiban",
+  "name": "JJIBAN - AI 기반 프로젝트 관리 도구",
+  "description": "로컬 실행 가능한 LLM 친화적 프로젝트 관리 도구",
+  "version": "0.1.0",
+  "status": "active",
+  "createdAt": "2026-01-15T00:00:00Z",
+  "updatedAt": "2025-12-12T12:38:47.858Z",
+  "settings": {
+    "defaultCategory": "development",
+    "statusFlow": {},
+    "priorities": [
+      "critical",
+      "high",
+      "medium",
+      "low"
+    ]
+  },
+  "stats": {
+    "totalWP": 3,
+    "completedWP": 1,
+    "totalActivities": 6,
+    "completedActivities": 2,
+    "totalTasks": 12,
+    "completedTasks": 3,
+    "progress": 25
+  },
+  "scheduledStart": "2025-12-01",
+  "scheduledEnd": "2026-12-26"
+}

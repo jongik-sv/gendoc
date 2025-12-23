@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "source_url": "https://claude.com/pricing#api",
+    "analysis_date": "2025-12-12",
+    "target_stack": "Nuxt 3 + Vue 3 + PrimeVue 4.x + TailwindCSS 3.4.x",
+    "theme_type": "dark",
+    "base_design": "Claude.com Light → Dark Mode Conversion"
+  },
+  "colors": {
+    "primary": {
+      "50": "#fef7f5",
+      "100": "#fdeee9",
+      "200": "#fbd5c9",
+      "300": "#f7b8a3",
+      "400": "#e8936f",
+      "500": "#d97757",
+      "600": "#c96442",
+      "700": "#a84d32",
+      "800": "#8a3f2a",
+      "900": "#723526",
+      "950": "#3d1a12"
+    },
+    "surface": {
+      "0": "#0a0a09",
+      "50": "#141413",
+      "100": "#1a1918",
+      "200": "#262624",
+      "300": "#30302e",
+      "400": "#3d3d3a",
+      "500": "#4d4c48",
+      "600": "#5e5d59",
+      "700": "#73726c",
+      "800": "#87867f",
+      "900": "#9c9a92"
+    },
+    "text": {
+      "color": "#f5f4ed",
+      "secondary": "#9c9a92",
+      "muted": "#73726c",
+      "inverse": "#141413"
+    },
+    "semantic": {
+      "success": "#22c55e",
+      "successDark": "#166534",
+      "warning": "#f59e0b",
+      "warningDark": "#92400e",
+      "error": "#ef4444",
+      "errorDark": "#991b1b",
+      "info": "#3b82f6",
+      "infoDark": "#1d4ed8"
+    },
+    "border": {
+      "color": "#3d3d3a",
+      "secondary": "#30302e",
+      "tertiary": "#262624"
+    },
+    "background": {
+      "primary": "#0a0a09",
+      "secondary": "#141413",
+      "tertiary": "#1a1918",
+      "card": "#1a1918",
+      "overlay": "rgba(0, 0, 0, 0.7)"
+    },
+    "accent": {
+      "clay": "#d97757",
+      "clayInteractive": "#c96442",
+      "oat": "#3d3428",
+      "cactus": "#2a3d36",
+      "sky": "#1e3a5f",
+      "heather": "#3a3950",
+      "fig": "#4a2a3a",
+      "coral": "#3d2828",
+      "olive": "#2a3320"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "\"Anthropic Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Arial, sans-serif",
+      "secondary": "\"Anthropic Serif\", Georgia, \"Times New Roman\", serif",
+      "mono": "\"JetBrains Mono\", \"Fira Code\", Consolas, Monaco, monospace"
+    },
+    "fontSize": {
+      "micro": "0.625rem",
+      "caption": "0.75rem",
+      "body-3": "0.9375rem",
+      "body-2": "1.0625rem",
+      "body-1": "1.1875rem",
+      "body-large-2": "1.25rem",
+      "body-large-1": "1.375rem",
+      "h6": "1rem",
+      "h5": "1.25rem",
+      "h4": "1.4375rem",
+      "h3": "1.75rem",
+      "h2": "1.875rem",
+      "h1": "2.125rem",
+      "display-2": "2.25rem",
+      "display-1": "2.625rem"
+    },
+    "fontWeight": {
+      "light": "300",
+      "regular": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700"
+    },
+    "lineHeight": {
+      "tight": "1.1",
+      "snug": "1.2",
+      "normal": "1.5",
+      "relaxed": "1.6",
+      "loose": "1.7"
+    },
+    "letterSpacing": {
+      "tight": "-0.01em",
+      "normal": "0em",
+      "wide": "0.01em",
+      "wider": "0.05em"
+    }
+  },
+  "spacing": {
+    "scale": {
+      "0": "0",
+      "0.25": "0.25rem",
+      "0.5": "0.5rem",
+      "0.75": "0.75rem",
+      "1": "1rem",
+      "1.5": "1.5rem",
+      "2": "2rem",
+      "2.5": "2.5rem",
+      "3": "3rem",
+      "4": "4rem"
+    },
+    "section": {
+      "none": "0",
+      "small": "4rem",
+      "main": "6rem",
+      "large": "8rem",
+      "pageTop": "13rem"
+    },
+    "container": {
+      "small": "60rem",
+      "medium": "74.5rem",
+      "main": "90rem",
+      "full": "100%"
+    },
+    "gutter": "2rem"
+  },
+  "borderRadius": {
+    "none": "0",
+    "xSmall": "0.25rem",
+    "small": "0.5rem",
+    "main": "0.75rem",
+    "large": "1rem",
+    "xLarge": "1.5rem",
+    "xxLarge": "2rem",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.3)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3)",
+    "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4)",
+    "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4)",
+    "inner": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.3)",
+    "glow": "0 0 20px rgba(217, 119, 87, 0.3)"
+  },
+  "transitions": {
+    "fast": "150ms",
+    "normal": "300ms",
+    "slow": "500ms",
+    "easeOut": "cubic-bezier(0.16, 1, 0.3, 1)"
+  },
+  "focus": {
+    "width": "0.125rem",
+    "offsetInner": "-0.125rem",
+    "offsetOuter": "0.25rem",
+    "color": "#d97757"
+  },
+  "components": {
+    "button": {
+      "primary": {
+        "background": "#f5f4ed",
+        "backgroundHover": "#ffffff",
+        "text": "#141413",
+        "border": "#f5f4ed"
+      },
+      "secondary": {
+        "background": "#262624",
+        "backgroundHover": "#30302e",
+        "text": "#f5f4ed",
+        "border": "#3d3d3a"
+      },
+      "tertiary": {
+        "background": "transparent",
+        "backgroundHover": "#1a1918",
+        "text": "#9c9a92",
+        "border": "#3d3d3a"
+      },
+      "brand": {
+        "background": "#c96442",
+        "backgroundHover": "#d97757",
+        "text": "#faf9f5",
+        "border": "#c96442"
+      },
+      "borderRadius": "0.25rem",
+      "padding": "0.5rem 0.75rem"
+    },
+    "card": {
+      "background": "#1a1918",
+      "border": "#262624",
+      "borderRadius": "1.5rem",
+      "padding": "2rem",
+      "shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.4)"
+    },
+    "input": {
+      "background": "#141413",
+      "backgroundFocus": "#1a1918",
+      "border": "#3d3d3a",
+      "borderFocus": "#d97757",
+      "text": "#f5f4ed",
+      "placeholder": "#73726c",
+      "borderRadius": "0.5rem"
+    },
+    "tab": {
+      "background": "transparent",
+      "backgroundActive": "#1a1918",
+      "text": "#73726c",
+      "textActive": "#f5f4ed",
+      "borderRadius": "0.75rem",
+      "padding": "0.5rem 1rem"
+    },
+    "table": {
+      "headerBackground": "#141413",
+      "headerText": "#9c9a92",
+      "rowBackground": "#0a0a09",
+      "rowBackgroundAlt": "#141413",
+      "rowBackgroundHover": "#1a1918",
+      "border": "#262624"
+    },
+    "badge": {
+      "success": {
+        "background": "#166534",
+        "text": "#22c55e"
+      },
+      "warning": {
+        "background": "#92400e",
+        "text": "#f59e0b"
+      },
+      "error": {
+        "background": "#991b1b",
+        "text": "#ef4444"
+      },
+      "info": {
+        "background": "#1d4ed8",
+        "text": "#3b82f6"
+      }
+    }
+  },
+  "wbs": {
+    "project": "#8b5cf6",
+    "workPackage": "#3b82f6",
+    "activity": "#22c55e",
+    "task": "#f59e0b"
+  }
+}

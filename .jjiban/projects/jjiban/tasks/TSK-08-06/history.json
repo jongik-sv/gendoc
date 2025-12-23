@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2025-12-16T12:49:04.183Z",
+    "action": "update",
+    "from": "{\"title\":\"Theme Integration & E2E Testing\",\"priority\":\"high\",\"schedule\":{\"start\":\"2026-02-17\",\"end\":\"2026-02-20\"},\"tags\":[\"theme\",\"testing\",\"e2e\",\"migration\"],\"depends\":\"TSK-08-01, TSK-08-02, TSK-08-03, TSK-08-04, TSK-08-05\",\"ref\":\"PRD 10.1, PRD 11, TRD 2.3.6\"}",
+    "to": "{\"id\":\"TSK-08-06\",\"type\":\"task\",\"title\":\"Theme Integration & E2E Testing\",\"category\":\"development\",\"status\":\"[xx]\",\"priority\":\"high\",\"schedule\":{\"start\":\"2026-02-17\",\"end\":\"2026-02-20\"},\"tags\":[\"theme\",\"testing\",\"e2e\",\"migration\"],\"depends\":\"TSK-08-01, TSK-08-02, TSK-08-03, TSK-08-04, TSK-08-05\",\"requirements\":[\"PrimeVue 디자인 토큰 오버라이드 (main.css)\",\"--p-tree-*, --p-splitter-*, --p-menubar-* 변수 매핑\",\"themeConfig.ts 삭제 및 의존성 정리\",\"다크 테마 일관성 검증\",\"기존 E2E 테스트 실행 및 회귀 수정\",\"PrimeVue 컴포넌트 상호작용 테스트 추가\",\"접근성 검증 (WCAG 2.1)\"],\"ref\":\"PRD 10.1, PRD 11, TRD 2.3.6\",\"progress\":100,\"taskCount\":1,\"children\":[],\"expanded\":false,\"completed\":{\"bd\":\"2025-12-16\",\"dd\":\"2025-12-16\",\"im\":\"2025-12-16\",\"vf\":\"2025-12-16\",\"xx\":\"2025-12-16\"}}",
+    "user": null
+  }
+]

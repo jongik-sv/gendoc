@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "members": [
+    {
+      "id": "hong",
+      "name": "Developer",
+      "email": "developer@example.com",
+      "role": "Full-Stack Developer",
+      "active": true
+    }
+  ]
+}

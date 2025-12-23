@@ -1,0 +1,81 @@
+<svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="500" fill="#0F172A"/>
+
+  <!-- Container -->
+  <rect x="20" y="20" width="560" height="460" fill="#1E293B" rx="8"/>
+
+  <!-- Document Title (H1) -->
+  <text x="40" y="60" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#E2E8F0">
+    기본설계 (010-basic-design.md)
+  </text>
+
+  <!-- Section Heading (H2) -->
+  <text x="40" y="100" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#E2E8F0">
+    0. 문서 메타데이터
+  </text>
+
+  <!-- Divider -->
+  <line x1="40" y1="110" x2="560" y2="110" stroke="#475569" stroke-width="1"/>
+
+  <!-- Table Header -->
+  <rect x="40" y="125" width="520" height="32" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="147" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#E2E8F0">
+    항목
+  </text>
+  <text x="300" y="147" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#E2E8F0">
+    내용
+  </text>
+
+  <!-- Table Row 1 -->
+  <rect x="40" y="157" width="520" height="28" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="177" font-family="system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+    Task ID
+  </text>
+  <text x="300" y="177" font-family="system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+    TSK-05-04
+  </text>
+
+  <!-- Table Row 2 -->
+  <rect x="40" y="185" width="520" height="28" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="205" font-family="system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+    Task명
+  </text>
+  <text x="300" y="205" font-family="system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+    Document Viewer
+  </text>
+
+  <!-- Table Row 3 -->
+  <rect x="40" y="213" width="520" height="28" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="233" font-family="system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+    Category
+  </text>
+  <text x="300" y="233" font-family="system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+    development
+  </text>
+
+  <!-- Section Heading (H2) -->
+  <text x="40" y="275" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#E2E8F0">
+    1. 목적 및 범위
+  </text>
+
+  <!-- Paragraph text -->
+  <text x="40" y="305" font-family="system-ui, sans-serif" font-size="14" fill="#CBD5E1">
+    Task 상세 패널에서 Markdown 기반 문서(기본설계, 상세설계,
+  </text>
+  <text x="40" y="325" font-family="system-ui, sans-serif" font-size="14" fill="#CBD5E1">
+    코드리뷰 등)를 렌더링하여 표시. 개발 프로세스 문서의 가독성을
+  </text>
+  <text x="40" y="345" font-family="system-ui, sans-serif" font-size="14" fill="#CBD5E1">
+    높이고 LLM이 생성한 Markdown 문서를 즉시 확인할 수 있도록 함.
+  </text>
+
+  <!-- Link example -->
+  <text x="40" y="375" font-family="system-ui, sans-serif" font-size="14" fill="#CBD5E1">
+    참조:
+    <tspan fill="#6C9BCF" text-decoration="underline">상세설계 문서</tspan>
+  </text>
+
+  <!-- Scrollbar indicator -->
+  <rect x="568" y="30" width="6" height="100" fill="#334155" rx="3"/>
+</svg>

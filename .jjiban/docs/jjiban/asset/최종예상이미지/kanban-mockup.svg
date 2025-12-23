@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <defs>
+    <style>
+      .bg { fill: #1a1a2e; }
+      .header { fill: #16213e; }
+      .header-text { fill: #e8e8e8; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .column { fill: #0f0f23; stroke: #2d2d44; stroke-width: 1; rx: 8; }
+      .column-header { fill: #e8e8e8; font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+      .column-count { fill: #888; font-family: Arial, sans-serif; font-size: 11px; }
+      .card { rx: 6; stroke-width: 1; }
+      .card-dev { fill: #1e3a5f; stroke: #3b82f6; }
+      .card-infra { fill: #3d2f1e; stroke: #f59e0b; }
+      .card-defect { fill: #3d1e1e; stroke: #ef4444; }
+      .card-title { fill: #ffffff; font-family: Arial, sans-serif; font-size: 11px; font-weight: 500; }
+      .card-id { fill: #888; font-family: Arial, sans-serif; font-size: 9px; }
+      .card-tag { font-family: Arial, sans-serif; font-size: 8px; fill: white; }
+      .tag-dev { fill: #3b82f6; }
+      .tag-infra { fill: #f59e0b; }
+      .filter-bg { fill: #16213e; rx: 4; }
+      .filter-text { fill: #aaa; font-family: Arial, sans-serif; font-size: 11px; }
+      .logo { fill: #3b82f6; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+      .nav-item { fill: #888; font-family: Arial, sans-serif; font-size: 12px; }
+      .nav-active { fill: #3b82f6; }
+      .progress-bg { fill: #2d2d44; rx: 2; }
+      .progress-fill { fill: #3b82f6; rx: 2; }
+      .assignee { fill: #6366f1; }
+      .priority-high { fill: #ef4444; }
+      .priority-medium { fill: #f59e0b; }
+      .priority-low { fill: #22c55e; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1400" height="900"/>
+
+  <!-- Header -->
+  <rect class="header" width="1400" height="56"/>
+  <text class="logo" x="24" y="36">jjiban</text>
+
+  <!-- Navigation -->
+  <text class="nav-item" x="120" y="36">대시보드</text>
+  <text class="nav-item nav-active" x="200" y="36">칸반</text>
+  <rect x="200" y="48" width="30" height="3" fill="#3b82f6" rx="1"/>
+  <text class="nav-item" x="260" y="36">WBS</text>
+  <text class="nav-item" x="300" y="36">Gantt</text>
+
+  <!-- Project Title -->
+  <text class="header-text" x="400" y="36">jjiban - AI 기반 프로젝트 관리 도구</text>
+
+  <!-- Filter Bar -->
+  <rect class="filter-bg" x="24" y="72" width="120" height="28"/>
+  <text class="filter-text" x="36" y="90">🔍 검색...</text>
+
+  <rect class="filter-bg" x="156" y="72" width="100" height="28"/>
+  <text class="filter-text" x="168" y="90">카테고리 ▾</text>
+
+  <rect class="filter-bg" x="268" y="72" width="100" height="28"/>
+  <text class="filter-text" x="280" y="90">담당자 ▾</text>
+
+  <rect class="filter-bg" x="380" y="72" width="100" height="28"/>
+  <text class="filter-text" x="392" y="90">WP 필터 ▾</text>
+
+  <!-- Progress Summary -->
+  <text class="filter-text" x="1100" y="90">전체 진행률: 0/50 (0%)</text>
+  <rect class="progress-bg" x="1240" y="80" width="120" height="8"/>
+
+  <!-- Kanban Columns -->
+  <!-- Column: Todo -->
+  <rect class="column" x="24" y="116" width="220" height="760"/>
+  <text class="column-header" x="40" y="142">📋 Todo</text>
+  <text class="column-count" x="100" y="142">(46)</text>
+
+  <!-- Todo Cards -->
+  <g transform="translate(36, 160)">
+    <rect class="card card-dev" width="196" height="72"/>
+    <text class="card-id" x="8" y="16">TSK-01-01-01</text>
+    <text class="card-title" x="8" y="32">Project CRUD 구현</text>
+    <rect class="tag-dev" x="8" y="44" width="70" height="16" rx="3"/>
+    <text class="card-tag" x="14" y="55">development</text>
+    <circle class="priority-high" cx="180" cy="12" r="4"/>
+  </g>
+
+  <g transform="translate(36, 240)">
+    <rect class="card card-dev" width="196" height="72"/>
+    <text class="card-id" x="8" y="16">TSK-01-01-02</text>
+    <text class="card-title" x="8" y="32">Work Package CRUD</text>
+    <rect class="tag-dev" x="8" y="44" width="70" height="16" rx="3"/>
+    <text class="card-tag" x="14" y="55">development</text>
+    <circle class="priority-high" cx="180" cy="12" r="4"/>
+  </g>
+
+  <g transform="translate(36, 320)">
+    <rect class="card card-dev" width="196" height="72"/>
+    <text class="card-id" x="8" y="16">TSK-02-01</text>
+    <text class="card-title" x="8" y="32">상태 전환 엔진 구현</text>
+    <rect class="tag-dev" x="8" y="44" width="70" height="16" rx="3"/>
+    <text class="card-tag" x="14" y="55">development</text>
+    <circle class="priority-high" cx="180" cy="12" r="4"/>
+  </g>
+
+  <g transform="translate(36, 400)">
+    <rect class="card card-infra" width="196" height="72"/>
+    <text class="card-id" x="8" y="16">TSK-09-01</text>
+    <text class="card-title" x="8" y="32">npx 실행 환경 구성</text>
+    <rect class="tag-infra" x="8" y="44" width="80" height="16" rx="3"/>
+    <text class="card-tag" x="14" y="55">infrastructure</text>
+    <circle class="priority-medium" cx="180" cy="12" r="4"/>
+  </g>
+
+  <text class="column-count" x="100" y="500">+42 more...</text>
+
+  <!-- Column: Design -->
+  <rect class="column" x="256" y="116" width="220" height="760"/>
+  <text class="column-header" x="272" y="142">📐 Design [bd]</text>
+  <text class="column-count" x="372" y="142">(1)</text>
+
+  <g transform="translate(268, 160)">
+    <rect class="card card-infra" width="196" height="72"/>
+    <text class="card-id" x="8" y="16">TSK-08-01</text>
+    <text class="card-title" x="8" y="32">디렉토리 구조 초기화</text>
+    <rect class="tag-infra" x="8" y="44" width="80" height="16" rx="3"/>
+    <text class="card-tag" x="14" y="55">infrastructure</text>
+    <circle class="priority-high" cx="180" cy="12" r="4"/>
+    <circle class="assignee" cx="160" cy="60" r="10"/>
+    <text fill="white" x="156" y="64" font-size="8">LM</text>
+  </g>
+
+  <!-- Column: Detail -->
+  <rect class="column" x="488" y="116" width="220" height="760"/>
+  <text class="column-header" x="504" y="142">📝 Detail [dd]</text>
+  <text class="column-count" x="600" y="142">(3)</text>
+
+  <g transform="translate(500, 160)">
+    <rect class="card card-dev" width="196" height="72"/>
+    <text class="card-id" x="8" y="16">TSK-08-02</text>
+    <text class="card-title" x="8" y="32">JSON 파일 CRUD 서비스</text>
+    <rect class="tag-dev" x="8" y="44" width="70" height="16" rx="3"/>
+    <text class="card-tag" x="14" y="55">development</text>
+    <circle class="priority-high" cx="180" cy="12" r="4"/>
+  </g>
+
+  <g transform="translate(500, 240)">
+    <rect class="card card-dev" width="196" height="72"/>
+    <text class="card-id" x="8" y="16">TSK-08-03</text>
+    <text class="card-title" x="8" y="32">index.json 자동 생성</text>
+    <rect class="tag-dev" x="8" y="44" width="70" height="16" rx="3"/>
+    <text class="card-tag" x="14" y="55">development</text>
+    <circle class="priority-high" cx="180" cy="12" r="4"/>
+  </g>
+
+  <g transform="translate(500, 320)">
+    <rect class="card card-dev" width="196" height="72"/>
+    <text class="card-id" x="8" y="16">TSK-08-04</text>
+    <text class="card-title" x="8" y="32">데이터 유효성 검증</text>
+    <rect class="tag-dev" x="8" y="44" width="70" height="16" rx="3"/>
+    <text class="card-tag" x="14" y="55">development</text>
+    <circle class="priority-medium" cx="180" cy="12" r="4"/>
+  </g>
+
+  <!-- Column: Implement -->
+  <rect class="column" x="720" y="116" width="220" height="760"/>
+  <text class="column-header" x="736" y="142">⚙️ Implement [im]</text>
+  <text class="column-count" x="856" y="142">(0)</text>
+
+  <text class="filter-text" x="790" y="450">드래그하여</text>
+  <text class="filter-text" x="790" y="470">Task 이동</text>
+
+  <!-- Column: Verify -->
+  <rect class="column" x="952" y="116" width="220" height="760"/>
+  <text class="column-header" x="968" y="142">🧪 Verify [ts]</text>
+  <text class="column-count" x="1068" y="142">(0)</text>
+
+  <text class="filter-text" x="1020" y="450">테스트 대기</text>
+
+  <!-- Column: Done -->
+  <rect class="column" x="1184" y="116" width="192" height="760"/>
+  <text class="column-header" x="1200" y="142">✅ Done [xx]</text>
+  <text class="column-count" x="1300" y="142">(0)</text>
+
+  <text class="filter-text" x="1240" y="450">완료된 Task</text>
+
+  <!-- Legend -->
+  <g transform="translate(24, 890)">
+    <rect class="tag-dev" width="12" height="12" rx="2"/>
+    <text class="filter-text" x="18" y="10">development (42)</text>
+
+    <rect class="tag-infra" x="130" width="12" height="12" rx="2"/>
+    <text class="filter-text" x="148" y="10">infrastructure (8)</text>
+
+    <circle class="priority-high" cx="280" cy="6" r="5"/>
+    <text class="filter-text" x="290" y="10">높음</text>
+
+    <circle class="priority-medium" cx="340" cy="6" r="5"/>
+    <text class="filter-text" x="350" y="10">중간</text>
+
+    <circle class="priority-low" cx="400" cy="6" r="5"/>
+    <text class="filter-text" x="410" y="10">낮음</text>
+  </g>
+</svg>

@@ -1,0 +1,159 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="600" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="400" height="600" fill="none" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- TaskBasicInfo Card -->
+  <g transform="translate(16, 16)">
+    <!-- Card Background -->
+    <rect width="368" height="220" rx="6" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+
+    <!-- Card Header -->
+    <g transform="translate(16, 16)">
+      <!-- Icon -->
+      <circle cx="8" cy="8" r="8" fill="#3B82F6"/>
+      <text x="8" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF">i</text>
+      <!-- Title -->
+      <text x="28" y="12" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F2937">
+        기본 정보
+      </text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="16" y1="40" x2="352" y2="40" stroke="#E5E7EB" stroke-width="1"/>
+
+    <!-- Fields -->
+    <g transform="translate(16, 56)">
+      <!-- ID Field -->
+      <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">ID</text>
+      <rect x="110" y="0" width="100" height="24" rx="4" fill="#DBEAFE"/>
+      <text x="120" y="16" font-family="Arial, sans-serif" font-size="12" fill="#1E40AF">TSK-05-01</text>
+
+      <!-- Title Field -->
+      <g transform="translate(0, 36)">
+        <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">제목</text>
+        <text x="110" y="12" font-family="Arial, sans-serif" font-size="14" fill="#1F2937">Detail Panel Structure</text>
+        <!-- Edit icon -->
+        <g transform="translate(310, 4)">
+          <path d="M 0 6 L 3 0 L 9 6 L 6 12 Z" fill="none" stroke="#9CA3AF" stroke-width="1"/>
+          <line x1="3" y1="0" x2="0" y2="0" stroke="#9CA3AF" stroke-width="1"/>
+        </g>
+      </g>
+
+      <!-- Category Field -->
+      <g transform="translate(0, 72)">
+        <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">카테고리</text>
+        <rect x="110" y="0" width="120" height="24" rx="4" fill="#DBEAFE"/>
+        <text x="120" y="16" font-family="Arial, sans-serif" font-size="12" fill="#1E40AF">Development</text>
+        <!-- Edit icon -->
+        <g transform="translate(310, 4)">
+          <path d="M 0 6 L 3 0 L 9 6 L 6 12 Z" fill="none" stroke="#9CA3AF" stroke-width="1"/>
+          <line x1="3" y1="0" x2="0" y2="0" stroke="#9CA3AF" stroke-width="1"/>
+        </g>
+      </g>
+
+      <!-- Priority Field -->
+      <g transform="translate(0, 108)">
+        <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">우선순위</text>
+        <rect x="110" y="0" width="60" height="24" rx="4" fill="#FEF3C7"/>
+        <text x="120" y="16" font-family="Arial, sans-serif" font-size="12" fill="#92400E">High</text>
+        <!-- Edit icon -->
+        <g transform="translate(310, 4)">
+          <path d="M 0 6 L 3 0 L 9 6 L 6 12 Z" fill="none" stroke="#9CA3AF" stroke-width="1"/>
+          <line x1="3" y1="0" x2="0" y2="0" stroke="#9CA3AF" stroke-width="1"/>
+        </g>
+      </g>
+
+      <!-- Assignee Field -->
+      <g transform="translate(0, 144)">
+        <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">담당자</text>
+        <text x="110" y="12" font-family="Arial, sans-serif" font-size="14" fill="#9CA3AF">미배정</text>
+        <!-- Edit icon -->
+        <g transform="translate(310, 4)">
+          <path d="M 0 6 L 3 0 L 9 6 L 6 12 Z" fill="none" stroke="#9CA3AF" stroke-width="1"/>
+          <line x1="3" y1="0" x2="0" y2="0" stroke="#9CA3AF" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- TaskProgress Card -->
+  <g transform="translate(16, 252)">
+    <!-- Card Background -->
+    <rect width="368" height="240" rx="6" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+
+    <!-- Card Header -->
+    <g transform="translate(16, 16)">
+      <!-- Icon -->
+      <path d="M 4 12 L 8 4 L 12 8 L 8 16 Z" fill="none" stroke="#22C55E" stroke-width="2"/>
+      <line x1="0" y1="16" x2="16" y2="16" stroke="#22C55E" stroke-width="2"/>
+      <!-- Title -->
+      <text x="28" y="12" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F2937">
+        진행 상태
+      </text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="16" y1="40" x2="352" y2="40" stroke="#E5E7EB" stroke-width="1"/>
+
+    <!-- Current State -->
+    <g transform="translate(16, 56)">
+      <text x="0" y="12" font-family="Arial, sans-serif" font-size="12" fill="#6B7280">현재 상태</text>
+      <rect x="0" y="20" width="150" height="28" rx="4" fill="#DBEAFE"/>
+      <text x="10" y="38" font-family="Arial, sans-serif" font-size="14" fill="#1E40AF">[bd] Basic Design</text>
+    </g>
+
+    <!-- Workflow Visualization -->
+    <g transform="translate(16, 124)">
+      <text x="0" y="12" font-family="Arial, sans-serif" font-size="12" fill="#6B7280">워크플로우 흐름</text>
+
+      <!-- Workflow Nodes -->
+      <g transform="translate(0, 28)">
+        <!-- Node 1: Todo (Completed) -->
+        <circle cx="30" cy="20" r="20" fill="#22C55E" stroke="#22C55E" stroke-width="2"/>
+        <path d="M 24 20 L 28 24 L 36 16" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+        <text x="30" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">Todo</text>
+
+        <!-- Connector 1-2 -->
+        <line x1="50" y1="20" x2="90" y2="20" stroke="#22C55E" stroke-width="2"/>
+
+        <!-- Node 2: Design (Current) -->
+        <circle cx="110" cy="20" r="20" fill="#3B82F6" stroke="#3B82F6" stroke-width="2"/>
+        <circle cx="110" cy="20" r="24" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.3"/>
+        <circle cx="110" cy="20" r="6" fill="#FFFFFF"/>
+        <text x="110" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">Design</text>
+
+        <!-- Connector 2-3 -->
+        <line x1="130" y1="20" x2="170" y2="20" stroke="#D1D5DB" stroke-width="2"/>
+
+        <!-- Node 3: Detail (Pending) -->
+        <circle cx="190" cy="20" r="20" fill="#E5E7EB" stroke="#D1D5DB" stroke-width="2"/>
+        <text x="190" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">3</text>
+        <text x="190" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">Detail</text>
+
+        <!-- Connector 3-4 -->
+        <line x1="210" y1="20" x2="250" y2="20" stroke="#D1D5DB" stroke-width="2"/>
+
+        <!-- Node 4: Implement (Pending) -->
+        <circle cx="270" cy="20" r="20" fill="#E5E7EB" stroke="#D1D5DB" stroke-width="2"/>
+        <text x="270" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">4</text>
+        <text x="270" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">Impl</text>
+
+        <!-- Connector 4-5 -->
+        <line x1="290" y1="20" x2="310" y2="20" stroke="#D1D5DB" stroke-width="2"/>
+
+        <!-- Node 5: Done (Pending) -->
+        <circle cx="330" cy="20" r="20" fill="#E5E7EB" stroke="#D1D5DB" stroke-width="2"/>
+        <text x="330" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">5</text>
+        <text x="330" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">Done</text>
+      </g>
+    </g>
+
+    <!-- Category Info -->
+    <g transform="translate(16, 210)">
+      <circle cx="6" cy="6" r="6" fill="#3B82F6"/>
+      <text x="6" y="10" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#FFFFFF">i</text>
+      <text x="20" y="10" font-family="Arial, sans-serif" font-size="12" fill="#6B7280">development 워크플로우</text>
+    </g>
+  </g>
+</svg>

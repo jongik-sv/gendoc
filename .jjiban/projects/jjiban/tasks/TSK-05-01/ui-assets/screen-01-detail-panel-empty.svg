@@ -1,0 +1,23 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="600" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="400" height="600" fill="none" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Empty State Content (Centered) -->
+  <g transform="translate(200, 250)">
+    <!-- Inbox Icon -->
+    <g transform="translate(-48, -48)">
+      <!-- Inbox base -->
+      <rect x="16" y="40" width="64" height="40" fill="none" stroke="#9CA3AF" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Inbox top -->
+      <path d="M 16 40 L 16 20 L 48 16 L 80 20 L 80 40" fill="none" stroke="#9CA3AF" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Inbox divider -->
+      <path d="M 16 56 L 32 56 L 32 64 L 64 64 L 64 56 L 80 56" fill="none" stroke="#9CA3AF" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Text -->
+    <text x="0" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">
+      Task를 선택하세요
+    </text>
+  </g>
+</svg>

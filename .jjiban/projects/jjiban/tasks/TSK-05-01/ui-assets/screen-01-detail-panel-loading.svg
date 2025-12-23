@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="600" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="400" height="600" fill="none" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Loading State Content (Centered) -->
+  <g transform="translate(200, 250)">
+    <!-- Spinner (simplified) -->
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#E5E7EB" stroke-width="4"/>
+    <path d="M 0,-30 A 30,30 0 0,1 21.21,-21.21" fill="none" stroke="#3B82F6" stroke-width="4" stroke-linecap="round">
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 0 0"
+        to="360 0 0"
+        dur="1s"
+        repeatCount="indefinite"/>
+    </path>
+
+    <!-- Text -->
+    <text x="0" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">
+      Task 정보를 불러오는 중...
+    </text>
+  </g>
+</svg>

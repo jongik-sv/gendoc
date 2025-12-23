@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2025-12-15T15:22:31.945Z",
+    "action": "update",
+    "from": "{\"title\":\"WBS Store API 응답 처리 버그 수정\",\"priority\":\"critical\",\"schedule\":{\"start\":\"2025-12-15\",\"end\":\"2025-12-15\"},\"tags\":[\"bug\",\"store\",\"api\"],\"depends\":\"TSK-01-01-03\",\"ref\":\"TSK-04-03 E2E 테스트 결과\"}",
+    "to": "{\"id\":\"TSK-01-01-05\",\"type\":\"task\",\"title\":\"WBS Store API 응답 처리 버그 수정\",\"category\":\"defect\",\"status\":\"[xx]\",\"priority\":\"critical\",\"schedule\":{\"start\":\"2025-12-15\",\"end\":\"2025-12-15\"},\"tags\":[\"bug\",\"store\",\"api\"],\"depends\":\"TSK-01-01-03\",\"requirements\":[\"fetchWbs 함수의 API 응답 형식 수정\",\"API 응답 `{metadata, tree}` 객체에서 tree 배열 추출\",\"\\\"nodes is not iterable\\\" 에러 해결\"],\"ref\":\"TSK-04-03 E2E 테스트 결과\",\"progress\":100,\"taskCount\":1,\"children\":[],\"expanded\":false,\"attributes\":{\"domain\":\"frontend\"},\"completed\":{\"an\":\"2025-12-15 22:13\",\"fx\":\"2025-12-15 22:13\",\"vf\":\"2025-12-15 22:13\",\"xx\":\"2025-12-15 22:13\"}}",
+    "user": null
+  }
+]

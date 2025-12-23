@@ -1,0 +1,378 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <defs>
+    <style>
+      .bg { fill: #1a1a2e; }
+      .header { fill: #16213e; }
+      .header-text { fill: #e8e8e8; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .sidebar { fill: #0f0f23; }
+      .detail-panel { fill: #16213e; }
+      .tree-row { fill: transparent; }
+      .tree-row:hover { fill: rgba(59, 130, 246, 0.1); }
+      .tree-row-selected { fill: rgba(59, 130, 246, 0.2); }
+      .node-text { fill: #e8e8e8; font-family: Arial, sans-serif; font-size: 12px; }
+      .node-id { fill: #888; font-family: Arial, sans-serif; font-size: 10px; }
+      .node-status { font-family: Arial, sans-serif; font-size: 9px; fill: white; }
+      .expand-icon { fill: #888; font-family: Arial, sans-serif; font-size: 14px; cursor: pointer; }
+      .tree-line { stroke: #3d3d5c; stroke-width: 1; }
+      .progress-bg { fill: #2d2d44; rx: 3; }
+      .progress-fill { rx: 3; }
+      .progress-text { fill: #888; font-family: Arial, sans-serif; font-size: 9px; }
+      .logo { fill: #3b82f6; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+      .nav-item { fill: #888; font-family: Arial, sans-serif; font-size: 12px; }
+      .nav-active { fill: #3b82f6; }
+      .detail-title { fill: #e8e8e8; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .detail-label { fill: #888; font-family: Arial, sans-serif; font-size: 11px; }
+      .detail-value { fill: #e8e8e8; font-family: Arial, sans-serif; font-size: 12px; }
+      .tag { rx: 3; }
+      .tag-dev { fill: #3b82f6; }
+      .tag-infra { fill: #f59e0b; }
+      .tag-status { fill: #22c55e; }
+      .tag-status-progress { fill: #f59e0b; }
+      .tag-text { fill: white; font-family: Arial, sans-serif; font-size: 9px; }
+      .btn { fill: #3b82f6; rx: 4; cursor: pointer; }
+      .btn-secondary { fill: #4b5563; rx: 4; }
+      .btn-text { fill: white; font-family: Arial, sans-serif; font-size: 11px; }
+      .divider { stroke: #2d2d44; stroke-width: 1; }
+      .icon-project { fill: #8b5cf6; }
+      .icon-wp { fill: #3b82f6; }
+      .icon-act { fill: #22c55e; }
+      .icon-task { fill: #f59e0b; }
+      .search-bg { fill: #0f0f23; stroke: #3d3d5c; rx: 4; }
+      .search-text { fill: #666; font-family: Arial, sans-serif; font-size: 11px; }
+      .summary-card { fill: #1e1e38; rx: 6; }
+      .summary-value { fill: #3b82f6; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; }
+      .summary-label { fill: #888; font-family: Arial, sans-serif; font-size: 10px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1400" height="900"/>
+
+  <!-- Header -->
+  <rect class="header" width="1400" height="56"/>
+  <text class="logo" x="24" y="36">jjiban</text>
+
+  <!-- Navigation -->
+  <text class="nav-item" x="120" y="36">대시보드</text>
+  <text class="nav-item" x="200" y="36">칸반</text>
+  <text class="nav-item nav-active" x="260" y="36">WBS</text>
+  <rect x="260" y="48" width="28" height="3" fill="#3b82f6" rx="1"/>
+  <text class="nav-item" x="310" y="36">Gantt</text>
+
+  <!-- Project Title -->
+  <text class="header-text" x="400" y="36">jjiban - AI 기반 프로젝트 관리 도구</text>
+
+  <!-- Tree Panel (Left) -->
+  <rect class="sidebar" x="0" y="56" width="820" height="844"/>
+
+  <!-- Tree Header -->
+  <rect class="header" x="0" y="56" width="820" height="44"/>
+  <text class="node-text" x="16" y="84">📁 WBS 트리</text>
+
+  <!-- Search Box -->
+  <rect class="search-bg" x="140" y="68" width="200" height="28"/>
+  <text class="search-text" x="152" y="86">🔍 검색...</text>
+
+  <!-- Expand/Collapse All -->
+  <text class="nav-item" x="360" y="86">모두 펼치기</text>
+  <text class="nav-item" x="440" y="86">모두 접기</text>
+
+  <!-- Summary Cards -->
+  <g transform="translate(560, 64)">
+    <rect class="summary-card" x="0" y="0" width="60" height="36"/>
+    <text class="summary-value" x="20" y="22">11</text>
+    <text class="summary-label" x="8" y="32">WP</text>
+
+    <rect class="summary-card" x="68" y="0" width="60" height="36"/>
+    <text class="summary-value" x="88" y="22">2</text>
+    <text class="summary-label" x="82" y="32">ACT</text>
+
+    <rect class="summary-card" x="136" y="0" width="60" height="36"/>
+    <text class="summary-value" x="150" y="22">50</text>
+    <text class="summary-label" x="146" y="32">TSK</text>
+
+    <rect class="summary-card" x="204" y="0" width="60" height="36"/>
+    <text class="summary-value" x="222" y="22">0%</text>
+    <text class="summary-label" x="212" y="32">진행</text>
+  </g>
+
+  <!-- Tree Content -->
+  <g transform="translate(0, 116)">
+    <!-- Project Node -->
+    <rect class="tree-row" x="0" y="0" width="820" height="40"/>
+    <text class="expand-icon" x="16" y="26">▼</text>
+    <rect class="icon-project" x="36" y="12" width="16" height="16" rx="3"/>
+    <text fill="white" x="40" y="24" font-size="10">P</text>
+    <text class="node-text" x="60" y="26" font-weight="bold">jjiban - AI 기반 프로젝트 관리 도구</text>
+    <rect class="progress-bg" x="420" y="16" width="100" height="8"/>
+    <text class="progress-text" x="530" y="24">0%</text>
+    <text class="node-id" x="580" y="24">50 Tasks</text>
+
+    <!-- WP-08: Data & Storage -->
+    <rect class="tree-row" x="0" y="44" width="820" height="36"/>
+    <line class="tree-line" x1="28" y1="44" x2="28" y2="62"/>
+    <line class="tree-line" x1="28" y1="62" x2="44" y2="62"/>
+    <text class="expand-icon" x="48" y="68">▼</text>
+    <rect class="icon-wp" x="68" y="52" width="16" height="16" rx="3"/>
+    <text fill="white" x="71" y="64" font-size="9">WP</text>
+    <text class="node-text" x="92" y="68">WP-08: Data &amp; Storage</text>
+    <rect class="progress-bg" x="420" y="56" width="100" height="8"/>
+    <rect class="progress-fill" x="420" y="56" width="25" height="8" fill="#f59e0b"/>
+    <text class="progress-text" x="530" y="64">25%</text>
+    <text class="node-id" x="580" y="64">4 Tasks</text>
+    <rect class="tag tag-status-progress" x="640" y="52" width="50" height="16"/>
+    <text class="tag-text" x="650" y="63">진행중</text>
+
+    <!-- TSK-08-01 -->
+    <rect class="tree-row tree-row-selected" x="0" y="84" width="820" height="32"/>
+    <line class="tree-line" x1="60" y1="84" x2="60" y2="100"/>
+    <line class="tree-line" x1="60" y1="100" x2="76" y2="100"/>
+    <rect class="icon-task" x="80" y="88" width="16" height="16" rx="3"/>
+    <text fill="white" x="83" y="100" font-size="9">T</text>
+    <text class="node-text" x="104" y="104">TSK-08-01: 디렉토리 구조 초기화</text>
+    <rect class="tag tag-infra" x="320" y="88" width="70" height="16"/>
+    <text class="tag-text" x="328" y="99">infrastructure</text>
+    <rect class="tag tag-status-progress" x="400" y="88" width="30" height="16"/>
+    <text class="tag-text" x="406" y="99">[bd]</text>
+    <text class="node-id" x="580" y="104">기본설계</text>
+
+    <!-- TSK-08-02 -->
+    <rect class="tree-row" x="0" y="120" width="820" height="32"/>
+    <line class="tree-line" x1="60" y1="120" x2="60" y2="136"/>
+    <line class="tree-line" x1="60" y1="136" x2="76" y2="136"/>
+    <rect class="icon-task" x="80" y="124" width="16" height="16" rx="3"/>
+    <text fill="white" x="83" y="136" font-size="9">T</text>
+    <text class="node-text" x="104" y="140">TSK-08-02: JSON 파일 CRUD 서비스</text>
+    <rect class="tag tag-dev" x="320" y="124" width="70" height="16"/>
+    <text class="tag-text" x="330" y="135">development</text>
+    <rect class="tag tag-status-progress" x="400" y="124" width="30" height="16"/>
+    <text class="tag-text" x="406" y="135">[dd]</text>
+    <text class="node-id" x="580" y="140">상세설계</text>
+
+    <!-- TSK-08-03 -->
+    <rect class="tree-row" x="0" y="156" width="820" height="32"/>
+    <line class="tree-line" x1="60" y1="156" x2="60" y2="172"/>
+    <line class="tree-line" x1="60" y1="172" x2="76" y2="172"/>
+    <rect class="icon-task" x="80" y="160" width="16" height="16" rx="3"/>
+    <text fill="white" x="83" y="172" font-size="9">T</text>
+    <text class="node-text" x="104" y="176">TSK-08-03: index.json 자동 생성</text>
+    <rect class="tag tag-dev" x="320" y="160" width="70" height="16"/>
+    <text class="tag-text" x="330" y="171">development</text>
+    <rect class="tag tag-status-progress" x="400" y="160" width="30" height="16"/>
+    <text class="tag-text" x="406" y="171">[dd]</text>
+    <text class="node-id" x="580" y="176">상세설계</text>
+
+    <!-- TSK-08-04 -->
+    <rect class="tree-row" x="0" y="192" width="820" height="32"/>
+    <line class="tree-line" x1="60" y1="192" x2="60" y2="208"/>
+    <line class="tree-line" x1="60" y1="208" x2="76" y2="208"/>
+    <rect class="icon-task" x="80" y="196" width="16" height="16" rx="3"/>
+    <text fill="white" x="83" y="208" font-size="9">T</text>
+    <text class="node-text" x="104" y="212">TSK-08-04: 데이터 유효성 검증</text>
+    <rect class="tag tag-dev" x="320" y="196" width="70" height="16"/>
+    <text class="tag-text" x="330" y="207">development</text>
+    <rect class="tag tag-status-progress" x="400" y="196" width="30" height="16"/>
+    <text class="tag-text" x="406" y="207">[dd]</text>
+    <text class="node-id" x="580" y="212">상세설계</text>
+
+    <!-- WP-01: Issue Management (with ACT) -->
+    <rect class="tree-row" x="0" y="232" width="820" height="36"/>
+    <line class="tree-line" x1="28" y1="232" x2="28" y2="250"/>
+    <line class="tree-line" x1="28" y1="250" x2="44" y2="250"/>
+    <text class="expand-icon" x="48" y="256">▼</text>
+    <rect class="icon-wp" x="68" y="240" width="16" height="16" rx="3"/>
+    <text fill="white" x="71" y="252" font-size="9">WP</text>
+    <text class="node-text" x="92" y="256">WP-01: Issue Management</text>
+    <rect class="progress-bg" x="420" y="244" width="100" height="8"/>
+    <text class="progress-text" x="530" y="252">0%</text>
+    <text class="node-id" x="580" y="252">6 Tasks</text>
+    <rect class="tag" x="640" y="240" width="50" height="16" fill="#6b7280"/>
+    <text class="tag-text" x="654" y="251">대기</text>
+
+    <!-- ACT-01-01: Entity CRUD -->
+    <rect class="tree-row" x="0" y="272" width="820" height="32"/>
+    <line class="tree-line" x1="60" y1="272" x2="60" y2="288"/>
+    <line class="tree-line" x1="60" y1="288" x2="76" y2="288"/>
+    <text class="expand-icon" x="80" y="292">▶</text>
+    <rect class="icon-act" x="100" y="276" width="16" height="16" rx="3"/>
+    <text fill="white" x="102" y="288" font-size="9">A</text>
+    <text class="node-text" x="124" y="292">ACT-01-01: Entity CRUD 구현</text>
+    <rect class="progress-bg" x="420" y="280" width="100" height="8"/>
+    <text class="progress-text" x="530" y="288">0%</text>
+    <text class="node-id" x="580" y="288">4 Tasks</text>
+
+    <!-- ACT-01-02: Business Logic -->
+    <rect class="tree-row" x="0" y="308" width="820" height="32"/>
+    <line class="tree-line" x1="60" y1="308" x2="60" y2="324"/>
+    <line class="tree-line" x1="60" y1="324" x2="76" y2="324"/>
+    <text class="expand-icon" x="80" y="328">▶</text>
+    <rect class="icon-act" x="100" y="312" width="16" height="16" rx="3"/>
+    <text fill="white" x="102" y="324" font-size="9">A</text>
+    <text class="node-text" x="124" y="328">ACT-01-02: Business Logic 구현</text>
+    <rect class="progress-bg" x="420" y="316" width="100" height="8"/>
+    <text class="progress-text" x="530" y="324">0%</text>
+    <text class="node-id" x="580" y="324">2 Tasks</text>
+
+    <!-- WP-02: Workflow Engine (Collapsed) -->
+    <rect class="tree-row" x="0" y="348" width="820" height="36"/>
+    <line class="tree-line" x1="28" y1="348" x2="28" y2="366"/>
+    <line class="tree-line" x1="28" y1="366" x2="44" y2="366"/>
+    <text class="expand-icon" x="48" y="372">▶</text>
+    <rect class="icon-wp" x="68" y="356" width="16" height="16" rx="3"/>
+    <text fill="white" x="71" y="368" font-size="9">WP</text>
+    <text class="node-text" x="92" y="372">WP-02: Workflow Engine</text>
+    <rect class="progress-bg" x="420" y="360" width="100" height="8"/>
+    <text class="progress-text" x="530" y="368">0%</text>
+    <text class="node-id" x="580" y="368">6 Tasks</text>
+    <rect class="tag" x="640" y="356" width="50" height="16" fill="#6b7280"/>
+    <text class="tag-text" x="654" y="367">대기</text>
+
+    <!-- WP-03 ~ WP-11 (Collapsed) -->
+    <rect class="tree-row" x="0" y="388" width="820" height="36"/>
+    <line class="tree-line" x1="28" y1="388" x2="28" y2="406"/>
+    <line class="tree-line" x1="28" y1="406" x2="44" y2="406"/>
+    <text class="expand-icon" x="48" y="412">▶</text>
+    <rect class="icon-wp" x="68" y="396" width="16" height="16" rx="3"/>
+    <text fill="white" x="71" y="408" font-size="9">WP</text>
+    <text class="node-text" x="92" y="412">WP-03: Document Management</text>
+    <text class="progress-text" x="530" y="408">0%</text>
+    <text class="node-id" x="580" y="408">5 Tasks</text>
+
+    <rect class="tree-row" x="0" y="428" width="820" height="36"/>
+    <line class="tree-line" x1="28" y1="428" x2="28" y2="446"/>
+    <line class="tree-line" x1="28" y1="446" x2="44" y2="446"/>
+    <text class="expand-icon" x="48" y="452">▶</text>
+    <rect class="icon-wp" x="68" y="436" width="16" height="16" rx="3"/>
+    <text fill="white" x="71" y="448" font-size="9">WP</text>
+    <text class="node-text" x="92" y="452">WP-04: LLM Integration</text>
+    <text class="progress-text" x="530" y="448">0%</text>
+    <text class="node-id" x="580" y="448">4 Tasks</text>
+
+    <rect class="tree-row" x="0" y="468" width="820" height="36"/>
+    <line class="tree-line" x1="28" y1="468" x2="28" y2="486"/>
+    <line class="tree-line" x1="28" y1="486" x2="44" y2="486"/>
+    <text class="expand-icon" x="48" y="492">▶</text>
+    <rect class="icon-wp" x="68" y="476" width="16" height="16" rx="3"/>
+    <text fill="white" x="71" y="488" font-size="9">WP</text>
+    <text class="node-text" x="92" y="492">WP-05: Kanban Board</text>
+    <text class="progress-text" x="530" y="488">0%</text>
+    <text class="node-id" x="580" y="488">5 Tasks</text>
+
+    <!-- More items indicator -->
+    <text class="node-id" x="92" y="540">+ 5 more Work Packages...</text>
+  </g>
+
+  <!-- Detail Panel (Right) -->
+  <rect class="detail-panel" x="820" y="56" width="580" height="844"/>
+
+  <!-- Detail Header -->
+  <rect fill="#1e1e38" x="820" y="56" width="580" height="60"/>
+  <text class="detail-title" x="840" y="92">TSK-08-01</text>
+  <text class="node-text" x="940" y="92">디렉토리 구조 초기화</text>
+
+  <!-- Status Badge -->
+  <rect class="tag tag-status-progress" x="1280" y="76" width="50" height="20" rx="4"/>
+  <text class="tag-text" x="1292" y="90">[bd]</text>
+
+  <!-- Detail Content -->
+  <g transform="translate(840, 140)">
+    <!-- Basic Info -->
+    <text class="detail-label" x="0" y="0">기본 정보</text>
+    <line class="divider" x1="0" y1="10" x2="520" y2="10"/>
+
+    <text class="detail-label" x="0" y="36">카테고리</text>
+    <rect class="tag tag-infra" x="80" y="24" width="80" height="18"/>
+    <text class="tag-text" x="92" y="36">infrastructure</text>
+
+    <text class="detail-label" x="200" y="36">우선순위</text>
+    <text class="detail-value" x="270" y="36">🔴 높음</text>
+
+    <text class="detail-label" x="0" y="66">담당자</text>
+    <circle fill="#6366f1" cx="92" cy="62" r="12"/>
+    <text fill="white" x="86" y="66" font-size="10">LM</text>
+    <text class="detail-value" x="112" y="66">Lead Member</text>
+
+    <text class="detail-label" x="200" y="66">상위 WP</text>
+    <text class="detail-value" x="270" y="66">WP-08: Data &amp; Storage</text>
+
+    <!-- Progress -->
+    <text class="detail-label" x="0" y="110">진행 상태</text>
+    <line class="divider" x1="0" y1="120" x2="520" y2="120"/>
+
+    <text class="detail-label" x="0" y="150">현재 상태</text>
+    <text class="detail-value" x="80" y="150">기본설계 (Basic Design)</text>
+
+    <text class="detail-label" x="0" y="180">워크플로우</text>
+    <g transform="translate(80, 168)">
+      <rect fill="#22c55e" x="0" y="0" width="50" height="18" rx="3"/>
+      <text class="tag-text" x="12" y="12">[ ]</text>
+      <text class="detail-label" x="55" y="12">→</text>
+      <rect fill="#3b82f6" x="70" y="0" width="50" height="18" rx="3"/>
+      <text class="tag-text" x="78" y="12">[bd]</text>
+      <text class="detail-label" x="125" y="12">→</text>
+      <rect fill="#4b5563" x="140" y="0" width="50" height="18" rx="3"/>
+      <text class="tag-text" x="148" y="12">[im]</text>
+      <text class="detail-label" x="195" y="12">→</text>
+      <rect fill="#4b5563" x="210" y="0" width="50" height="18" rx="3"/>
+      <text class="tag-text" x="218" y="12">[xx]</text>
+    </g>
+
+    <!-- Requirements -->
+    <text class="detail-label" x="0" y="220">요구사항</text>
+    <line class="divider" x1="0" y1="230" x2="520" y2="230"/>
+
+    <text class="detail-value" x="0" y="256">• .jjiban/ 폴더 구조 생성</text>
+    <text class="detail-value" x="0" y="278">• project.json, team.json 초기화</text>
+    <text class="detail-value" x="0" y="300">• Backend: InitService 구현</text>
+    <text class="node-id" x="0" y="324">참조: PRD 5.1</text>
+
+    <!-- Documents -->
+    <text class="detail-label" x="0" y="360">관련 문서</text>
+    <line class="divider" x1="0" y1="370" x2="520" y2="370"/>
+
+    <rect fill="#1e3a5f" x="0" y="386" width="250" height="36" rx="4"/>
+    <text class="detail-value" x="12" y="408">📄 010-basic-design.md</text>
+
+    <rect fill="#0f0f23" x="260" y="386" width="250" height="36" rx="4" stroke="#3d3d5c"/>
+    <text class="node-id" x="272" y="408">📄 020-detail-design.md (예정)</text>
+
+    <!-- Actions -->
+    <text class="detail-label" x="0" y="450">작업</text>
+    <line class="divider" x1="0" y1="460" x2="520" y2="460"/>
+
+    <rect class="btn" x="0" y="480" width="100" height="32"/>
+    <text class="btn-text" x="24" y="500">📝 편집</text>
+
+    <rect class="btn-secondary" x="110" y="480" width="100" height="32"/>
+    <text class="btn-text" x="124" y="500">📂 문서 열기</text>
+
+    <rect class="btn-secondary" x="220" y="480" width="120" height="32"/>
+    <text class="btn-text" x="234" y="500">🖥️ 터미널 열기</text>
+
+    <rect class="btn" x="350" y="480" width="100" height="32"/>
+    <text class="btn-text" x="364" y="500">▶ draft</text>
+
+    <!-- History -->
+    <text class="detail-label" x="0" y="550">이력</text>
+    <line class="divider" x1="0" y1="560" x2="520" y2="560"/>
+
+    <text class="node-id" x="0" y="586">2026-01-15 10:00</text>
+    <text class="detail-value" x="120" y="586">상태 변경: [ ] → [bd]</text>
+
+    <text class="node-id" x="0" y="608">2026-01-15 09:30</text>
+    <text class="detail-value" x="120" y="608">Task 생성</text>
+  </g>
+
+  <!-- Hierarchy Legend -->
+  <g transform="translate(840, 820)">
+    <text class="detail-label" x="0" y="0">계층 범례:</text>
+    <rect class="icon-project" x="80" y="-10" width="14" height="14" rx="2"/>
+    <text class="node-id" x="100" y="0">Project</text>
+    <rect class="icon-wp" x="160" y="-10" width="14" height="14" rx="2"/>
+    <text class="node-id" x="180" y="0">Work Package</text>
+    <rect class="icon-act" x="270" y="-10" width="14" height="14" rx="2"/>
+    <text class="node-id" x="290" y="0">Activity</text>
+    <rect class="icon-task" x="350" y="-10" width="14" height="14" rx="2"/>
+    <text class="node-id" x="370" y="0">Task</text>
+  </g>
+</svg>

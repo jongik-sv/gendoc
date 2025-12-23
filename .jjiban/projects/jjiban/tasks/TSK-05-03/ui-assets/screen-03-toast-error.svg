@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100">
+  <!-- Background -->
+  <rect x="0" y="0" width="350" height="100" fill="#F9FAFB"/>
+
+  <!-- Toast Container -->
+  <rect x="10" y="10" width="330" height="80" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" rx="6"/>
+
+  <!-- Error Icon -->
+  <circle cx="32" cy="50" r="14" fill="#EF4444"/>
+  <path d="M 32 43 L 32 52" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="32" cy="57" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Toast Content -->
+  <g id="content">
+    <!-- Summary -->
+    <text x="56" y="40" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#991B1B">수정 실패</text>
+
+    <!-- Detail -->
+    <text x="56" y="62" font-family="Arial, sans-serif" font-size="13" fill="#991B1B">입력 값이 유효하지 않습니다.</text>
+  </g>
+
+  <!-- Close Button -->
+  <circle cx="315" cy="25" r="8" fill="#EF4444" opacity="0.3"/>
+  <path d="M 312 22 L 318 28 M 318 22 L 312 28" stroke="#991B1B" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Annotation -->
+  <text x="10" y="98" font-family="Arial, sans-serif" font-size="10" fill="#9CA3AF">PrimeVue Toast (severity: error, life: 5000ms)</text>
+</svg>

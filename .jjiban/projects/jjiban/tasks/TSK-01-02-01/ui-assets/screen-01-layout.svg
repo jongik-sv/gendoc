@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <!-- 배경 -->
+  <rect width="1400" height="900" fill="#1a1a2e"/>
+
+  <!-- Header (56px) -->
+  <rect x="0" y="0" width="1400" height="56" fill="#16213e"/>
+
+  <!-- Logo (텍스트만) -->
+  <text x="24" y="36" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6">jjiban</text>
+
+  <!-- Navigation Menu -->
+  <g font-family="Arial, sans-serif" font-size="12">
+    <!-- Dashboard (비활성) -->
+    <text x="120" y="36" fill="#888">대시보드</text>
+    <!-- Kanban (비활성) -->
+    <text x="200" y="36" fill="#888">칸반</text>
+    <!-- WBS (활성 - underline 스타일) -->
+    <text x="260" y="36" fill="#3b82f6" font-weight="bold">WBS</text>
+    <rect x="260" y="48" width="28" height="3" fill="#3b82f6" rx="1"/>
+    <!-- Gantt (비활성) -->
+    <text x="310" y="36" fill="#888">Gantt</text>
+  </g>
+
+  <!-- Project Name (우측) -->
+  <text x="1200" y="36" font-family="Arial, sans-serif" font-size="14" fill="#e8e8e8">jjiban Project</text>
+
+  <!-- Header 하단 구분선 -->
+  <line x1="0" y1="56" x2="1400" y2="56" stroke="#3d3d5c" stroke-width="1"/>
+
+  <!-- Left Panel (820px, 약 59%) -->
+  <rect x="0" y="56" width="820" height="844" fill="#0f0f23"/>
+
+  <!-- Left Panel Title -->
+  <text x="24" y="96" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e8e8e8">WBS Tree</text>
+  <text x="24" y="116" font-family="Arial, sans-serif" font-size="12" fill="#888">slot: left (820px)</text>
+
+  <!-- Left Panel Content Placeholder -->
+  <rect x="24" y="136" width="772" height="100" rx="8" fill="#1a1a2e" stroke="#3d3d5c" stroke-dasharray="4,4"/>
+  <text x="410" y="191" font-family="Arial, sans-serif" font-size="14" fill="#888" text-anchor="middle">WBS Tree Content Area</text>
+
+  <!-- Left Panel Size Indicator -->
+  <text x="24" y="276" font-family="Arial, sans-serif" font-size="11" fill="#888">width: 820px (min: 400px)</text>
+  <text x="24" y="292" font-family="Arial, sans-serif" font-size="11" fill="#888">height: calc(100vh - 56px)</text>
+
+  <!-- Divider (패널 구분선) -->
+  <line x1="820" y1="56" x2="820" y2="900" stroke="#3d3d5c" stroke-width="1"/>
+
+  <!-- Right Panel (580px, 약 41%) -->
+  <rect x="820" y="56" width="580" height="844" fill="#16213e"/>
+
+  <!-- Right Panel Title -->
+  <text x="844" y="96" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e8e8e8">Task Detail</text>
+  <text x="844" y="116" font-family="Arial, sans-serif" font-size="12" fill="#888">slot: right (580px)</text>
+
+  <!-- Right Panel Content Placeholder -->
+  <rect x="844" y="136" width="532" height="100" rx="8" fill="#1e1e38" stroke="#3d3d5c" stroke-dasharray="4,4"/>
+  <text x="1110" y="191" font-family="Arial, sans-serif" font-size="14" fill="#888" text-anchor="middle">Task Detail Content Area</text>
+
+  <!-- Right Panel Size Indicator -->
+  <text x="844" y="276" font-family="Arial, sans-serif" font-size="11" fill="#888">width: 580px (min: 300px)</text>
+  <text x="844" y="292" font-family="Arial, sans-serif" font-size="11" fill="#888">height: calc(100vh - 56px)</text>
+
+  <!-- Dimension Annotations -->
+  <!-- Header Height -->
+  <line x1="1370" y1="0" x2="1370" y2="56" stroke="#3b82f6" stroke-width="1"/>
+  <line x1="1365" y1="0" x2="1375" y2="0" stroke="#3b82f6" stroke-width="1"/>
+  <line x1="1365" y1="56" x2="1375" y2="56" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1380" y="32" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">56px</text>
+
+  <!-- Total Width -->
+  <line x1="0" y1="880" x2="1400" y2="880" stroke="#3b82f6" stroke-width="1"/>
+  <line x1="0" y1="875" x2="0" y2="885" stroke="#3b82f6" stroke-width="1"/>
+  <line x1="1400" y1="875" x2="1400" y2="885" stroke="#3b82f6" stroke-width="1"/>
+  <text x="680" y="895" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">min-width: 1200px (표시: 1400px)</text>
+
+  <!-- Split Indicator -->
+  <line x1="0" y1="860" x2="820" y2="860" stroke="#22c55e" stroke-width="2"/>
+  <text x="410" y="855" font-family="Arial, sans-serif" font-size="10" fill="#22c55e" text-anchor="middle">820px (~59%)</text>
+
+  <line x1="820" y1="860" x2="1400" y2="860" stroke="#f59e0b" stroke-width="2"/>
+  <text x="1110" y="855" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle">580px (~41%)</text>
+</svg>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <!-- Arrow markers -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+    <marker id="arrowhead-loop" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#7b1fa2" />
+    </marker>
+
+    <!-- Filters for shadows -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#fafafa"/>
+
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#333">
+    defect 카테고리 워크플로우
+  </text>
+
+  <!-- Main Flow -->
+  <g id="main-flow">
+    <!-- Todo -->
+    <rect x="50" y="150" width="120" height="70" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="3" filter="url(#shadow)"/>
+    <text x="110" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1565c0">[ ] Todo</text>
+    <text x="110" y="200" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">결함 접수</text>
+
+    <!-- Arrow: start -->
+    <line x1="170" y1="185" x2="220" y2="185" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="195" y="175" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1565c0">start</text>
+
+    <!-- 분석 -->
+    <rect x="220" y="150" width="120" height="70" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="3" filter="url(#shadow)"/>
+    <text x="280" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#c62828">[an] 분석</text>
+    <text x="280" y="200" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">원인/영향 분석</text>
+
+    <!-- Arrow: analyze -->
+    <line x1="340" y1="185" x2="400" y2="185" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="370" y="175" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#c62828">fix</text>
+
+    <!-- 수정 (with action box) -->
+    <rect x="400" y="130" width="180" height="110" rx="8" fill="#fff3e0" stroke="#ef6c00" stroke-width="3" filter="url(#shadow)"/>
+    <text x="490" y="160" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#ef6c00">[fx] 수정</text>
+    <text x="490" y="180" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">코드 수정</text>
+    <!-- Action indicators -->
+    <rect x="415" y="195" width="70" height="25" rx="4" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1"/>
+    <text x="450" y="212" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#7b1fa2">audit</text>
+    <rect x="495" y="195" width="70" height="25" rx="4" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1"/>
+    <text x="530" y="212" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#7b1fa2">patch</text>
+    <!-- Loop arrow for actions -->
+    <path d="M 565 225 Q 590 260 490 260 Q 410 260 415 225" stroke="#7b1fa2" stroke-width="1.5" stroke-dasharray="4,2" fill="none" marker-end="url(#arrowhead-loop)"/>
+    <text x="490" y="280" font-family="Arial, sans-serif" font-size="10" font-style="italic" text-anchor="middle" fill="#7b1fa2">반복 가능</text>
+
+    <!-- Arrow: verify -->
+    <line x1="580" y1="185" x2="650" y2="185" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="615" y="175" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#2e7d32">verify</text>
+
+    <!-- 테스트 -->
+    <rect x="650" y="150" width="120" height="70" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3" filter="url(#shadow)"/>
+    <text x="710" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2e7d32">[vf] 검증</text>
+    <text x="710" y="200" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">회귀 테스트</text>
+
+    <!-- Arrow: done -->
+    <line x1="770" y1="185" x2="840" y2="185" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="805" y="175" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#455a64">done</text>
+
+    <!-- 완료 -->
+    <rect x="840" y="150" width="120" height="70" rx="8" fill="#eceff1" stroke="#455a64" stroke-width="3" filter="url(#shadow)"/>
+    <text x="900" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#455a64">[xx] 완료</text>
+    <text x="900" y="200" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">수정 완료</text>
+  </g>
+
+  <!-- Legend -->
+  <g id="legend" transform="translate(50, 360)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">범례 (Legend)</text>
+
+    <rect x="0" y="25" width="90" height="35" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+    <text x="45" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1565c0">Todo</text>
+
+    <rect x="110" y="25" width="90" height="35" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+    <text x="155" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#c62828">Analysis</text>
+
+    <rect x="220" y="25" width="90" height="35" rx="6" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+    <text x="265" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#ef6c00">Fix</text>
+
+    <rect x="330" y="25" width="90" height="35" rx="6" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+    <text x="375" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7b1fa2">Action</text>
+
+    <rect x="440" y="25" width="90" height="35" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="485" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#2e7d32">Test</text>
+
+    <rect x="550" y="25" width="90" height="35" rx="6" fill="#eceff1" stroke="#455a64" stroke-width="2"/>
+    <text x="595" y="48" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#455a64">Done</text>
+  </g>
+
+  <!-- Command Types -->
+  <g id="command-types" transform="translate(50, 460)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">명령어 분류</text>
+
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      <tspan font-weight="bold" fill="#333">상태 전환 명령어:</tspan> start, fix, verify, done
+    </text>
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      <tspan font-weight="bold" fill="#7b1fa2">상태 내 액션:</tspan> audit, patch (수정 단계) - 반복 가능, 상태 변경 없음
+    </text>
+  </g>
+
+  <!-- Key Features -->
+  <g id="features" transform="translate(700, 360)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">주요 특징</text>
+
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      • 5단계 간소화된 워크플로우
+    </text>
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      • 분석 단계에서 원인/영향 파악
+    </text>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      • 수정 단계에서 LLM 코드 리뷰 반복 가능
+    </text>
+    <text x="0" y="105" font-family="Arial, sans-serif" font-size="13" fill="#555">
+      • 회귀 테스트 포함
+    </text>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="570" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#999">
+    JJIban - defect 카테고리 워크플로우 v2.4
+  </text>
+</svg>

@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2025-12-17T05:29:12.274Z",
+    "action": "update",
+    "from": "{\"title\":\"Nuxt 3 프로젝트 초기화\",\"priority\":\"high\",\"assignee\":\"hong\",\"schedule\":{\"start\":\"2025-12-13\",\"end\":\"2025-12-13\"},\"tags\":[\"nuxt\",\"setup\"],\"ref\":\"PRD 3\"}",
+    "to": "{\"id\":\"TSK-01-01-01\",\"type\":\"task\",\"title\":\"Nuxt 3 프로젝트 초기화\",\"category\":\"infrastructure\",\"status\":\"[xx]\",\"priority\":\"high\",\"assignee\":\"hong\",\"schedule\":{\"start\":\"2025-12-13\",\"end\":\"2025-12-13\"},\"tags\":[\"nuxt\",\"setup\"],\"requirements\":[\"Nuxt 3 프로젝트 생성 (npx nuxi init)\",\"TypeScript 설정\",\"Standalone 모드 설정 (nitro preset)\"],\"ref\":\"PRD 3\",\"progress\":100,\"taskCount\":1,\"children\":[],\"expanded\":false,\"completed\":{\"ds\":\"2025-12-15 22:13\",\"im\":\"2025-12-15 22:13\",\"xx\":\"2025-12-15 22:13\"}}",
+    "user": null
+  },
+  {
+    "timestamp": "2025-12-17T05:29:07.543Z",
+    "action": "update",
+    "from": "{\"title\":\"Nuxt 3 프로젝트 초기화\",\"priority\":\"critical\",\"assignee\":\"hong\",\"schedule\":{\"start\":\"2025-12-13\",\"end\":\"2025-12-13\"},\"tags\":[\"nuxt\",\"setup\"],\"ref\":\"PRD 3\"}",
+    "to": "{\"id\":\"TSK-01-01-01\",\"type\":\"task\",\"title\":\"Nuxt 3 프로젝트 초기화\",\"category\":\"infrastructure\",\"status\":\"[xx]\",\"priority\":\"critical\",\"assignee\":\"hong\",\"schedule\":{\"start\":\"2025-12-13\",\"end\":\"2025-12-13\"},\"tags\":[\"nuxt\",\"setup\"],\"requirements\":[\"Nuxt 3 프로젝트 생성 (npx nuxi init)\",\"TypeScript 설정\",\"Standalone 모드 설정 (nitro preset)\"],\"ref\":\"PRD 3\",\"progress\":100,\"taskCount\":1,\"children\":[],\"expanded\":false,\"completed\":{\"ds\":\"2025-12-15 22:13\",\"im\":\"2025-12-15 22:13\",\"xx\":\"2025-12-15 22:13\"}}",
+    "user": null
+  },
+  {
+    "timestamp": "2025-12-17T04:38:29.868Z",
+    "action": "update",
+    "from": "{\"title\":\"Nuxt 3 프로젝트 초기화\",\"priority\":\"critical\",\"assignee\":\"hong\",\"schedule\":{\"start\":\"2025-12-13\",\"end\":\"2025-12-13\"},\"tags\":[\"nuxt\",\"setup\"],\"ref\":\"PRD 3\"}",
+    "to": "{\"id\":\"TSK-01-01-01\",\"type\":\"task\",\"title\":\"Nuxt 3 프로젝트 초기화\",\"category\":\"infrastructure\",\"status\":\"[xx]\",\"priority\":\"critical\",\"assignee\":\"hong\",\"schedule\":{\"start\":\"2025-12-13\",\"end\":\"2025-12-13\"},\"tags\":[\"nuxt\",\"setup\"],\"requirements\":[\"Nuxt 3 프로젝트 생성 (npx nuxi init)\",\"TypeScript 설정\",\"Standalone 모드 설정 (nitro preset)\"],\"ref\":\"PRD 3\",\"progress\":100,\"taskCount\":1,\"children\":[],\"expanded\":false,\"completed\":{\"ds\":\"2025-12-15 22:13\",\"im\":\"2025-12-15 22:13\",\"xx\":\"2025-12-15 22:13\"}}",
+    "user": null
+  },
+  {
+    "timestamp": "2025-12-15T15:34:25.287Z",
+    "action": "update",
+    "from": "{\"title\":\"Nuxt 3 프로젝트 초기화\",\"priority\":\"critical\",\"schedule\":{\"start\":\"2025-12-13\",\"end\":\"2025-12-13\"},\"tags\":[\"nuxt\",\"setup\"],\"ref\":\"PRD 3\"}",
+    "to": "{\"id\":\"TSK-01-01-01\",\"type\":\"task\",\"title\":\"Nuxt 3 프로젝트 초기화\",\"category\":\"infrastructure\",\"status\":\"[xx]\",\"priority\":\"critical\",\"schedule\":{\"start\":\"2025-12-13\",\"end\":\"2025-12-13\"},\"tags\":[\"nuxt\",\"setup\"],\"requirements\":[\"Nuxt 3 프로젝트 생성 (npx nuxi init)\",\"TypeScript 설정\",\"Standalone 모드 설정 (nitro preset)\"],\"ref\":\"PRD 3\",\"progress\":100,\"taskCount\":1,\"children\":[],\"expanded\":false,\"completed\":{\"ds\":\"2025-12-15 22:13\",\"im\":\"2025-12-15 22:13\",\"xx\":\"2025-12-15 22:13\"}}",
+    "user": null
+  }
+]

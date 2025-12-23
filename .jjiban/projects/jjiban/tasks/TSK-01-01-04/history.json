@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2025-12-15T15:33:56.571Z",
+    "action": "update",
+    "from": "{\"title\":\"프로젝트 디렉토리 구조 설정\",\"priority\":\"high\",\"schedule\":{\"start\":\"2025-12-14\",\"end\":\"2025-12-15\"},\"tags\":[\"structure\",\"setup\"],\"depends\":\"TSK-01-01-01\",\"ref\":\"PRD 9\"}",
+    "to": "{\"id\":\"TSK-01-01-04\",\"type\":\"task\",\"title\":\"프로젝트 디렉토리 구조 설정\",\"category\":\"infrastructure\",\"status\":\"[xx]\",\"priority\":\"high\",\"schedule\":{\"start\":\"2025-12-14\",\"end\":\"2025-12-15\"},\"tags\":[\"structure\",\"setup\"],\"depends\":\"TSK-01-01-01\",\"requirements\":[\"components/, composables/, stores/, server/api/ 디렉토리 구조\",\"공통 타입 정의 (types/)\",\"유틸리티 함수 디렉토리 (utils/)\"],\"ref\":\"PRD 9\",\"progress\":100,\"taskCount\":1,\"children\":[],\"expanded\":false,\"completed\":{\"ds\":\"2025-12-15 22:13\",\"im\":\"2025-12-15 22:13\",\"xx\":\"2025-12-15 22:13\"}}",
+    "user": null
+  }
+]

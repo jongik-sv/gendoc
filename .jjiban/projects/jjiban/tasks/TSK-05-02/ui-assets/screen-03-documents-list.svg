@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <!-- Background -->
+  <rect width="600" height="500" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- Panel Header -->
+  <rect width="600" height="50" fill="#F9FAFB"/>
+  <text x="16" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#111827">관련 문서</text>
+
+  <!-- Document 1 (Exists) -->
+  <g transform="translate(16, 70)">
+    <rect width="568" height="100" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+    <!-- Icon -->
+    <text x="16" y="35" font-family="Arial, sans-serif" font-size="24">📄</text>
+    <!-- Title -->
+    <text x="56" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#1E3A8A">010-basic-design.md</text>
+    <!-- Type -->
+    <text x="56" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1E40AF">타입: 기본설계</text>
+    <!-- Metadata -->
+    <text x="56" y="70" font-family="Arial, sans-serif" font-size="11" fill="#3B82F6">크기: 15.5 KB | 수정일: 2025-12-15 13:12</text>
+    <!-- Open Button -->
+    <rect x="480" y="30" width="70" height="32" rx="4" fill="#3B82F6" stroke="#3B82F6" stroke-width="1"/>
+    <text x="515" y="51" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">열기</text>
+  </g>
+
+  <!-- Document 2 (Exists) -->
+  <g transform="translate(16, 190)">
+    <rect width="568" height="100" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+    <!-- Icon -->
+    <text x="16" y="35" font-family="Arial, sans-serif" font-size="24">📄</text>
+    <!-- Title -->
+    <text x="56" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#1E3A8A">020-detail-design.md</text>
+    <!-- Type -->
+    <text x="56" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1E40AF">타입: 상세설계</text>
+    <!-- Metadata -->
+    <text x="56" y="70" font-family="Arial, sans-serif" font-size="11" fill="#3B82F6">크기: 42.3 KB | 수정일: 2025-12-15 14:20</text>
+    <!-- Open Button -->
+    <rect x="480" y="30" width="70" height="32" rx="4" fill="#3B82F6" stroke="#3B82F6" stroke-width="1"/>
+    <text x="515" y="51" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">열기</text>
+  </g>
+
+  <!-- Document 3 (Expected - Not Exists) -->
+  <g transform="translate(16, 310)">
+    <rect width="568" height="100" rx="8" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="6,6"/>
+    <!-- Icon (grayed out) -->
+    <text x="16" y="35" font-family="Arial, sans-serif" font-size="24" opacity="0.4">📄</text>
+    <!-- Title -->
+    <text x="56" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">030-implementation.md</text>
+    <!-- Type -->
+    <text x="56" y="50" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">타입: 구현</text>
+    <!-- Expected Condition -->
+    <text x="56" y="70" font-family="Arial, sans-serif" font-size="11" fill="#9CA3AF">생성 조건: /wf:build 실행 후 생성</text>
+    <!-- No Button for expected document -->
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(16, 430)">
+    <rect x="0" y="0" width="20" height="20" rx="4" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1"/>
+    <text x="30" y="15" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">존재하는 문서 (클릭하여 열기)</text>
+
+    <rect x="200" y="0" width="20" height="20" rx="4" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="230" y="15" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">예정된 문서 (아직 생성되지 않음)</text>
+  </g>
+</svg>

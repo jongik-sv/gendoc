@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <style>
+      .bg { fill: #1e1e2e; }
+      .panel { fill: #2d2d3d; stroke: #3d3d4d; stroke-width: 1; }
+      .title { fill: #cdd6f4; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; }
+      .btn-active { fill: #3b82f6; stroke: none; rx: 6; }
+      .btn-disabled { fill: #45475a; stroke: none; rx: 6; opacity: 0.5; }
+      .btn-success { fill: #10b981; stroke: none; rx: 6; }
+      .btn-warning { fill: #f59e0b; stroke: none; rx: 6; }
+      .btn-danger { fill: #ef4444; stroke: none; rx: 6; }
+      .btn-secondary { fill: #6b7280; stroke: none; rx: 6; }
+      .btn-text { fill: #ffffff; font-family: system-ui, sans-serif; font-size: 12px; text-anchor: middle; }
+      .btn-text-disabled { fill: #9ca3af; font-family: system-ui, sans-serif; font-size: 12px; text-anchor: middle; }
+      .divider { stroke: #45475a; stroke-width: 1; }
+      .label { fill: #a6adc8; font-family: system-ui, sans-serif; font-size: 11px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="400"/>
+
+  <!-- Main Panel -->
+  <rect class="panel" x="20" y="20" width="1160" height="360" rx="8"/>
+
+  <!-- Title -->
+  <text class="title" x="40" y="50">WorkflowActions - development, status: [bd]</text>
+
+  <!-- Command Buttons Row 1 -->
+  <g transform="translate(40, 70)">
+    <!-- start (disabled) -->
+    <rect class="btn-disabled" x="0" y="0" width="70" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="35" y="21">시작</text>
+
+    <!-- ui (active - info) -->
+    <rect class="btn-active" x="80" y="0" width="80" height="32" rx="6"/>
+    <text class="btn-text" x="120" y="21">UI설계</text>
+
+    <!-- draft (active - info) -->
+    <rect class="btn-active" x="170" y="0" width="90" height="32" rx="6"/>
+    <text class="btn-text" x="215" y="21">상세설계</text>
+
+    <!-- review (disabled) -->
+    <rect class="btn-disabled" x="270" y="0" width="70" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="305" y="21">리뷰</text>
+
+    <!-- apply (disabled) -->
+    <rect class="btn-disabled" x="350" y="0" width="70" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="385" y="21">적용</text>
+
+    <!-- build (disabled) -->
+    <rect class="btn-disabled" x="430" y="0" width="70" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="465" y="21">구현</text>
+
+    <!-- test (disabled) -->
+    <rect class="btn-disabled" x="510" y="0" width="80" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="550" y="21">테스트</text>
+  </g>
+
+  <!-- Command Buttons Row 2 -->
+  <g transform="translate(40, 115)">
+    <!-- audit (disabled) -->
+    <rect class="btn-disabled" x="0" y="0" width="90" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="45" y="21">코드리뷰</text>
+
+    <!-- patch (disabled) -->
+    <rect class="btn-disabled" x="100" y="0" width="70" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="135" y="21">패치</text>
+
+    <!-- verify (disabled) -->
+    <rect class="btn-disabled" x="180" y="0" width="70" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="215" y="21">검증</text>
+
+    <!-- done (disabled) -->
+    <rect class="btn-disabled" x="260" y="0" width="70" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="295" y="21">완료</text>
+
+    <!-- fix (disabled) -->
+    <rect class="btn-disabled" x="340" y="0" width="70" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="375" y="21">수정</text>
+
+    <!-- skip (disabled) -->
+    <rect class="btn-disabled" x="420" y="0" width="70" height="32" rx="6"/>
+    <text class="btn-text-disabled" x="455" y="21">생략</text>
+  </g>
+
+  <!-- Divider -->
+  <line class="divider" x1="40" y1="170" x2="1160" y2="170"/>
+
+  <!-- Auto Actions Label -->
+  <text class="label" x="40" y="195">자동실행</text>
+
+  <!-- Auto Action Buttons -->
+  <g transform="translate(40, 210)">
+    <!-- Run -->
+    <rect class="btn-success" x="0" y="0" width="80" height="36" rx="6"/>
+    <text class="btn-text" x="40" y="23">▶ Run</text>
+
+    <!-- Auto -->
+    <rect class="btn-active" x="90" y="0" width="90" height="36" rx="6"/>
+    <text class="btn-text" x="135" y="23">▶▶ Auto</text>
+
+    <!-- Stop (hidden when not executing) -->
+    <rect class="btn-danger" x="190" y="0" width="70" height="36" rx="6" opacity="0.3"/>
+    <text class="btn-text" x="225" y="23" opacity="0.5">■ 중지</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(40, 290)">
+    <text class="label" x="0" y="0">범례:</text>
+
+    <rect class="btn-active" x="50" y="-12" width="60" height="20" rx="4"/>
+    <text class="btn-text" x="80" y="3" font-size="10">활성</text>
+
+    <rect class="btn-disabled" x="120" y="-12" width="60" height="20" rx="4"/>
+    <text class="btn-text-disabled" x="150" y="3" font-size="10">비활성</text>
+
+    <rect class="btn-success" x="190" y="-12" width="60" height="20" rx="4"/>
+    <text class="btn-text" x="220" y="3" font-size="10">성공</text>
+
+    <rect class="btn-warning" x="260" y="-12" width="60" height="20" rx="4"/>
+    <text class="btn-text" x="290" y="3" font-size="10">경고</text>
+
+    <rect class="btn-danger" x="330" y="-12" width="60" height="20" rx="4"/>
+    <text class="btn-text" x="360" y="3" font-size="10">위험</text>
+  </g>
+
+  <!-- State Info Box -->
+  <g transform="translate(700, 70)">
+    <rect class="panel" x="0" y="0" width="440" height="280" rx="6"/>
+    <text class="title" x="15" y="25">상태별 버튼 활성화 규칙</text>
+
+    <text class="label" x="15" y="55">development:</text>
+    <text class="label" x="30" y="75">[ ] → 시작</text>
+    <text class="label" x="30" y="95">[bd] → UI설계, 상세설계</text>
+    <text class="label" x="30" y="115">[dd] → 리뷰, 적용, 구현</text>
+    <text class="label" x="30" y="135">[im] → 테스트, 코드리뷰, 패치, 검증</text>
+    <text class="label" x="30" y="155">[vf] → 완료</text>
+
+    <text class="label" x="15" y="185">defect:</text>
+    <text class="label" x="30" y="205">[ ] → 시작</text>
+    <text class="label" x="30" y="225">[an] → 수정</text>
+    <text class="label" x="30" y="245">[fx] → 코드리뷰, 패치, 검증</text>
+
+    <text class="label" x="230" y="55">infrastructure:</text>
+    <text class="label" x="245" y="75">[ ] → 시작, 생략</text>
+    <text class="label" x="245" y="95">[dd] → 구현</text>
+    <text class="label" x="245" y="115">[im] → 코드리뷰, 패치, 완료</text>
+  </g>
+</svg>

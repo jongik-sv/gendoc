@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 56" width="1400" height="56">
+  <!-- Header Background -->
+  <rect width="1400" height="56" fill="#16213e"/>
+
+  <!-- Logo (텍스트만) -->
+  <text x="24" y="36" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" style="cursor: pointer;">jjiban</text>
+
+  <!-- Navigation Menu -->
+  <g font-family="Arial, sans-serif" font-size="12">
+    <!-- Dashboard (비활성) -->
+    <g opacity="0.6" style="cursor: not-allowed;">
+      <text x="120" y="36" fill="#888">대시보드</text>
+    </g>
+
+    <!-- Kanban (비활성) -->
+    <g opacity="0.6" style="cursor: not-allowed;">
+      <text x="200" y="36" fill="#888">칸반</text>
+    </g>
+
+    <!-- WBS (활성 - underline 스타일) -->
+    <g style="cursor: pointer;">
+      <text x="260" y="36" fill="#3b82f6" font-weight="bold">WBS</text>
+      <rect x="260" y="48" width="28" height="3" fill="#3b82f6" rx="1"/>
+    </g>
+
+    <!-- Gantt (비활성) -->
+    <g opacity="0.6" style="cursor: not-allowed;">
+      <text x="310" y="36" fill="#888">Gantt</text>
+    </g>
+  </g>
+
+  <!-- Project Name (우측) -->
+  <text x="1200" y="36" font-family="Arial, sans-serif" font-size="14" fill="#e8e8e8">jjiban Project</text>
+
+  <!-- Bottom Border -->
+  <line x1="0" y1="55" x2="1400" y2="55" stroke="#3d3d5c" stroke-width="1"/>
+
+  <!-- Annotations (설명용) -->
+  <g font-family="Arial, sans-serif" font-size="8" fill="#3b82f6" opacity="0.7">
+    <!-- Logo Area -->
+    <text x="24" y="52">Logo (클릭 → /wbs)</text>
+
+    <!-- Active Menu -->
+    <line x1="274" y1="52" x2="274" y2="55" stroke="#3b82f6" stroke-width="1"/>
+    <text x="260" y="55">활성</text>
+
+    <!-- Disabled Menu -->
+    <text x="150" y="52" fill="#888">비활성 (클릭 시 Toast)</text>
+  </g>
+</svg>

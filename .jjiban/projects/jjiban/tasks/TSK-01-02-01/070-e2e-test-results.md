@@ -1,0 +1,209 @@
+# E2E 테스트 결과서: AppLayout 컴포넌트
+
+**Template Version:** 1.0.0 — **Last Updated:** 2025-12-13
+
+> **용도**: E2E 테스트 실행 후 결과를 기록하는 문서
+> **생성 시점**: `/wf:test` 명령어 실행 시 자동 생성
+> **참조 문서**: `026-test-specification.md`
+
+---
+
+## 0. 문서 메타데이터
+
+| 항목 | 내용 |
+|------|------|
+| Task ID | TSK-01-02-01 |
+| Task명 | AppLayout 컴포넌트 구현 |
+| 테스트 일시 | 2025-12-13 22:45 |
+| 테스트 환경 | Playwright 1.49.1, Chromium |
+| 베이스 URL | http://localhost:3333 |
+| 상세설계 문서 | `020-detail-design.md` |
+
+---
+
+## 1. 테스트 요약
+
+### 1.1 전체 결과
+
+| 항목 | 수치 | 상태 |
+|------|------|------|
+| 총 시나리오 수 | 6 | - |
+| 통과 | 6 | ✅ |
+| 실패 | 0 | - |
+| 스킵 | 0 | - |
+| **통과율** | 100% | ✅ |
+
+### 1.2 브라우저별 결과
+
+| 브라우저 | 통과 | 실패 | 스킵 |
+|----------|------|------|------|
+| Chromium | 6 | 0 | 0 |
+
+### 1.3 테스트 판정
+
+- [x] **PASS**: 모든 E2E 시나리오 통과
+- [ ] **CONDITIONAL**: 주요 시나리오 통과, 일부 실패 (검토 필요)
+- [ ] **FAIL**: 핵심 시나리오 실패 (코드 수정 필요)
+
+---
+
+## 2. 요구사항별 테스트 결과
+
+> 상세설계 `025-traceability-matrix.md` 기반
+
+### 2.1 기능 요구사항 검증 결과
+
+| 요구사항 ID | 요구사항 설명 | 테스트 ID | 결과 | 비고 |
+|-------------|--------------|-----------|------|------|
+| FR-001 | 레이아웃 구조 (Header + Content) | E2E-001 | ✅ PASS | Header/Content/Left/Right Panel 모두 표시 |
+| FR-002 | 좌우 분할 패널 (60:40) | E2E-002 | ✅ PASS | 60:40 비율 검증 완료 |
+| FR-003 | 반응형 레이아웃 (최소 1200px) | E2E-003 | ✅ PASS | 1200px 미만에서 스크롤 발생 |
+
+**검증 현황**: 3/3 기능 요구사항 E2E 검증 완료 (100%)
+
+### 2.2 비즈니스 규칙 검증 결과
+
+| 규칙 ID | 규칙 설명 | 테스트 ID | 결과 | 검증 방법 |
+|---------|----------|-----------|------|----------|
+| BR-001 | Header 높이 56px 고정 | E2E-004 | ✅ PASS | Header boundingBox.height 확인 |
+| BR-002 | Content 높이 = 100vh - 56px | E2E-004 | ✅ PASS | Content boundingBox.height 확인 |
+| BR-003 | 패널 최소 너비 (좌측 400px, 우측 300px) | E2E-005 | ✅ PASS | Panel boundingBox.width 확인 |
+| BR-004 | 기본 분할 비율 60:40 | E2E-002 | ✅ PASS | Panel 너비 비율 계산 |
+
+**검증 현황**: 4/4 비즈니스 규칙 E2E 검증 완료 (100%)
+
+---
+
+## 3. 시나리오별 상세 결과
+
+### 3.1 통과한 시나리오
+
+| 테스트 ID | 시나리오 | 실행 시간 | 요구사항 | 스크린샷 |
+|-----------|----------|----------|----------|----------|
+| E2E-001 | AppLayout이 Header + Content 구조로 표시된다 | 2.5s | FR-001 | `e2e-001-layout-structure.png` |
+| E2E-002 | 좌우 패널이 60:40 비율로 분할된다 | 2.6s | FR-002, BR-004 | `e2e-002-panel-ratio.png` |
+| E2E-003 | 1200px 미만에서 가로 스크롤이 발생한다 | 2.4s | FR-003 | `e2e-003-responsive.png` |
+| E2E-004 | Header는 56px, Content는 나머지 높이를 차지한다 | 2.7s | BR-001, BR-002 | `e2e-004-heights.png` |
+| E2E-005 | 패널은 최소 너비를 유지한다 | 2.4s | BR-003 | `e2e-005-min-width.png` |
+| E2E-006 | 시맨틱 HTML 태그가 올바르게 적용된다 | 2.3s | 접근성 | - |
+
+### 3.2 실패한 시나리오
+
+> 없음
+
+---
+
+## 4. UI 요소 검증 결과
+
+> data-testid 기반 셀렉터 검증
+
+### 4.1 필수 UI 요소 존재 확인
+
+| 셀렉터 | 설명 | 존재 | 상호작용 |
+|--------|------|------|----------|
+| `[data-testid="app-layout"]` | 레이아웃 최상위 컨테이너 | ✅ | - |
+| `[data-testid="app-header"]` | Header 영역 | ✅ | - |
+| `[data-testid="app-content"]` | Content 영역 | ✅ | - |
+| `[data-testid="left-panel"]` | 좌측 패널 | ✅ | - |
+| `[data-testid="right-panel"]` | 우측 패널 | ✅ | - |
+
+### 4.2 누락된 UI 요소
+
+> 없음
+
+---
+
+## 5. 접근성 및 반응형 테스트
+
+### 5.1 접근성 검증 (E2E-006)
+
+| 항목 | 결과 | 비고 |
+|------|------|------|
+| 시맨틱 HTML 태그 | ✅ | header, main, aside, section |
+| ARIA role 속성 | ✅ | banner, main, complementary, region |
+| 키보드 탐색 | - | 별도 테스트 필요 |
+
+### 5.2 반응형 검증
+
+| 뷰포트 | 결과 | 비고 |
+|--------|------|------|
+| Desktop (1920x1080) | ✅ | 정상 레이아웃 |
+| 경계값 (1200x800) | ✅ | 최소 너비 유지 |
+| 최소 이하 (1100x800) | ✅ | 가로 스크롤 발생 |
+
+---
+
+## 6. 테스트 실행 로그
+
+### 6.1 실행 명령어
+
+```bash
+npm run test:e2e -- --reporter=json,list
+```
+
+### 6.2 실행 결과 요약
+
+```
+Running 6 tests using 6 workers
+
+  ✓  1 layout.spec.ts:14:3 › AppLayout 컴포넌트 › E2E-001: AppLayout이 Header + Content 구조로 표시된다 (2.5s)
+  ✓  2 layout.spec.ts:40:3 › AppLayout 컴포넌트 › E2E-002: 좌우 패널이 60:40 비율로 분할된다 (2.6s)
+  ✓  3 layout.spec.ts:74:3 › AppLayout 컴포넌트 › E2E-003: 1200px 미만에서 가로 스크롤이 발생한다 (2.4s)
+  ✓  4 layout.spec.ts:94:3 › AppLayout 컴포넌트 › E2E-004: Header는 56px, Content는 나머지 높이를 차지한다 (2.7s)
+  ✓  5 layout.spec.ts:124:3 › AppLayout 컴포넌트 › E2E-005: 패널은 최소 너비를 유지한다 (2.4s)
+  ✓  6 layout.spec.ts:154:3 › AppLayout 컴포넌트 › E2E-006: 시맨틱 HTML 태그가 올바르게 적용된다 (2.3s)
+
+  6 passed (13.4s)
+```
+
+---
+
+## 7. 품질 게이트 결과
+
+| 게이트 | 기준 | 실제 | 결과 |
+|--------|------|------|------|
+| E2E 시나리오 통과율 | 100% | 100% | ✅ |
+| 핵심 시나리오 통과 | 필수 | 통과 | ✅ |
+| UI 요소 존재 | 100% | 100% | ✅ |
+
+**최종 판정**: ✅ PASS
+
+---
+
+## 8. 스크린샷 목록
+
+> 테스트 중 캡처된 스크린샷
+
+| 파일명 | 시나리오 | 단계 | 설명 |
+|--------|----------|------|------|
+| `e2e-001-layout-structure.png` | E2E-001 | 레이아웃 확인 | Header + Content 구조 표시 |
+| `e2e-002-panel-ratio.png` | E2E-002 | 비율 확인 | 60:40 분할 상태 |
+| `e2e-003-responsive.png` | E2E-003 | 반응형 확인 | 1100px 뷰포트 |
+| `e2e-004-heights.png` | E2E-004 | 높이 확인 | Header 56px, Content 나머지 |
+| `e2e-005-min-width.png` | E2E-005 | 최소 너비 확인 | 1200px 뷰포트 |
+
+**스크린샷 경로**: `test-results/202512132246/e2e/screenshots/`
+
+---
+
+## 9. 다음 단계
+
+### 테스트 통과 시
+- `/wf:verify TSK-01-02-01` 명령어로 통합테스트 진행
+
+---
+
+## 관련 문서
+
+- 상세설계: `020-detail-design.md`
+- 추적성 매트릭스: `025-traceability-matrix.md`
+- 테스트 명세: `026-test-specification.md`
+- 구현 문서: `030-implementation.md`
+
+---
+
+<!--
+author: Claude
+Generated by /wf:test command
+Generated at: 2025-12-13 22:46
+-->

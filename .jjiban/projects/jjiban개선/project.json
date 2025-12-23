@@ -1,0 +1,12 @@
+{
+  "id": "jjiban개선",
+  "name": "jjiban 개선",
+  "description": "jjiban 개선",
+  "version": "0.1.0",
+  "status": "active",
+  "wbsDepth": 4,
+  "createdAt": "2025-12-13T00:00:00.000Z",
+  "updatedAt": "2025-12-15T00:00:00.000Z",
+  "scheduledStart": "2025-12-13",
+  "scheduledEnd": "2026-01-25"
+}

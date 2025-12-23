@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Card Container -->
+  <rect x="10" y="10" width="380" height="380" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="8"/>
+
+  <!-- Card Header -->
+  <rect x="10" y="10" width="380" height="48" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1" rx="8"/>
+  <text x="24" y="38" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#111827">작업</text>
+
+  <!-- Edit Mode Section -->
+  <g id="edit-fields">
+    <!-- Title Label -->
+    <text x="24" y="80" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#374151">제목</text>
+
+    <!-- Title Input -->
+    <rect x="24" y="88" width="352" height="36" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="4"/>
+    <text x="32" y="111" font-family="Arial, sans-serif" font-size="14" fill="#111827">Detail Actions</text>
+
+    <!-- Priority Label -->
+    <text x="24" y="145" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#374151">우선순위</text>
+
+    <!-- Priority Dropdown -->
+    <rect x="24" y="153" width="170" height="36" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="4"/>
+    <text x="32" y="176" font-family="Arial, sans-serif" font-size="14" fill="#111827">High</text>
+    <text x="165" y="176" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">▼</text>
+
+    <!-- Assignee Label -->
+    <text x="206" y="145" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#374151">담당자</text>
+
+    <!-- Assignee Dropdown -->
+    <rect x="206" y="153" width="170" height="36" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="4"/>
+    <circle cx="220" cy="171" r="10" fill="#3B82F6"/>
+    <text x="215" y="176" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">A</text>
+    <text x="236" y="176" font-family="Arial, sans-serif" font-size="14" fill="#111827">개발자1</text>
+    <text x="347" y="176" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">▼</text>
+  </g>
+
+  <!-- Action Buttons -->
+  <g id="action-buttons">
+    <!-- Save Button -->
+    <rect x="262" y="205" width="56" height="32" fill="#22C55E" rx="4"/>
+    <text x="270" y="226" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#FFFFFF">✓ 저장</text>
+
+    <!-- Cancel Button -->
+    <rect x="326" y="205" width="50" height="32" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" rx="4"/>
+    <text x="334" y="226" font-family="Arial, sans-serif" font-size="13" fill="#6B7280">✕ 취소</text>
+  </g>
+
+  <!-- Divider 1 -->
+  <line x1="24" y1="260" x2="376" y2="260" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="24" y="280" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#6B7280">상태 전이</text>
+
+  <!-- Transition Buttons -->
+  <g id="transition-buttons">
+    <!-- Start Button -->
+    <rect x="24" y="295" width="60" height="32" fill="#3B82F6" rx="4"/>
+    <text x="35" y="316" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#FFFFFF">▶ 시작</text>
+
+    <!-- Draft Button -->
+    <rect x="94" y="295" width="90" height="32" fill="#3B82F6" rx="4"/>
+    <text x="102" y="316" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#FFFFFF">✎ 초안 작성</text>
+
+    <!-- Build Button -->
+    <rect x="194" y="295" width="60" height="32" fill="#22C55E" rx="4"/>
+    <text x="202" y="316" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#FFFFFF">⚡ 구현</text>
+  </g>
+
+  <!-- Divider 2 -->
+  <line x1="24" y1="350" x2="376" y2="350" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="24" y="370" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#6B7280">문서</text>
+
+  <!-- Annotations -->
+  <text x="100" y="390" font-family="Arial, sans-serif" font-size="11" fill="#9CA3AF">편집 모드 - 인라인 편집 필드 활성화</text>
+</svg>

@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2025-12-16T16:05:17.973Z",
+    "action": "update",
+    "from": "{\"title\":\"Project API\",\"priority\":\"high\",\"schedule\":{\"start\":\"2025-12-23\",\"end\":\"2025-12-27\"},\"tags\":[\"api\",\"project\"],\"depends\":\"TSK-02-03-03\",\"ref\":\"PRD 8.1\"}",
+    "to": "{\"id\":\"TSK-03-01\",\"type\":\"task\",\"title\":\"Project API\",\"category\":\"development\",\"status\":\"[xx]\",\"priority\":\"high\",\"schedule\":{\"start\":\"2025-12-23\",\"end\":\"2025-12-27\"},\"tags\":[\"api\",\"project\"],\"depends\":\"TSK-02-03-03\",\"requirements\":[\"GET /api/projects - 프로젝트 목록 조회\",\"GET /api/projects/:id - 프로젝트 상세 (project.json, team.json 포함)\",\"POST /api/projects - 프로젝트 생성 (폴더, 초기 파일 생성)\"],\"ref\":\"PRD 8.1\",\"progress\":100,\"taskCount\":1,\"children\":[],\"expanded\":false}",
+    "user": null
+  }
+]

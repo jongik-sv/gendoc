@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E2E 테스트 결과 - {{TASK_ID}}</title>
+    <style>
+        :root {
+            --color-pass: #22c55e;
+            --color-fail: #ef4444;
+            --color-skip: #f59e0b;
+            --color-bg: #f8fafc;
+            --color-card: #ffffff;
+            --color-border: #e2e8f0;
+            --color-text: #1e293b;
+            --color-text-secondary: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .summary-card {
+            background: var(--color-card);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .summary-card.pass {
+            border-top: 4px solid var(--color-pass);
+        }
+
+        .summary-card.fail {
+            border-top: 4px solid var(--color-fail);
+        }
+
+        .summary-card.skip {
+            border-top: 4px solid var(--color-skip);
+        }
+
+        .summary-card.total {
+            border-top: 4px solid #667eea;
+        }
+
+        .summary-card .number {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .summary-card.pass .number {
+            color: var(--color-pass);
+        }
+
+        .summary-card.fail .number {
+            color: var(--color-fail);
+        }
+
+        .summary-card.skip .number {
+            color: var(--color-skip);
+        }
+
+        .summary-card.total .number {
+            color: #667eea;
+        }
+
+        .summary-card .label {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            margin-top: 8px;
+        }
+
+        /* Progress Bar */
+        .progress-section {
+            background: var(--color-card);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar {
+            height: 24px;
+            border-radius: 12px;
+            background: #e2e8f0;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .progress-pass {
+            background: var(--color-pass);
+            transition: width 0.3s ease;
+        }
+
+        .progress-fail {
+            background: var(--color-fail);
+            transition: width 0.3s ease;
+        }
+
+        .progress-skip {
+            background: var(--color-skip);
+            transition: width 0.3s ease;
+        }
+
+        .progress-legend {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.pass {
+            background: var(--color-pass);
+        }
+
+        .legend-dot.fail {
+            background: var(--color-fail);
+        }
+
+        .legend-dot.skip {
+            background: var(--color-skip);
+        }
+
+        /* Section */
+        .section {
+            background: var(--color-card);
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: #f1f5f9;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            padding: 24px;
+        }
+
+        /* Test Results Table */
+        .test-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .test-table th,
+        .test-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .test-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .test-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .test-table tr:hover {
+            background: #f8fafc;
+        }
+
+        /* Status Badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-badge.pass {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-badge.fail {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-badge.skip {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        /* Screenshot Gallery */
+        .screenshot-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshot-card {
+            background: #f8fafc;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .screenshot-card img:hover {
+            transform: scale(1.02);
+        }
+
+        .screenshot-info {
+            padding: 12px 16px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .screenshot-title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .screenshot-desc {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+
+        .screenshot-status {
+            margin-top: 8px;
+        }
+
+        /* Failure Details */
+        .failure-card {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .failure-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .failure-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .failure-title {
+            font-weight: 600;
+            color: #991b1b;
+        }
+
+        .failure-step {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .failure-error {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 16px;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            margin-bottom: 12px;
+        }
+
+        .failure-screenshot {
+            margin-top: 16px;
+        }
+
+        .failure-screenshot img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 2px solid #fecaca;
+        }
+
+        /* Modal for full-size screenshots */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Requirements Coverage */
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .coverage-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .coverage-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .coverage-icon.pass {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .coverage-icon.fail {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .coverage-details {
+            flex: 1;
+        }
+
+        .coverage-id {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .coverage-desc {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .screenshot-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 0;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .tab:hover {
+            background: #f1f5f9;
+            color: var(--color-text);
+        }
+
+        .tab.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>E2E 테스트 결과 보고서</h1>
+            <div class="header-meta">
+                <span><strong>Task ID:</strong> {{TASK_ID}}</span>
+                <span><strong>Task:</strong> {{TASK_NAME}}</span>
+                <span><strong>실행일시:</strong> {{TEST_DATE}}</span>
+                <span><strong>환경:</strong> {{TEST_ENV}}</span>
+            </div>
+        </header>
+
+        <!-- Summary Cards -->
+        <div class="summary-grid">
+            <div class="summary-card total">
+                <div class="number">{{TOTAL_TESTS}}</div>
+                <div class="label">전체 테스트</div>
+            </div>
+            <div class="summary-card pass">
+                <div class="number">{{PASSED_TESTS}}</div>
+                <div class="label">통과</div>
+            </div>
+            <div class="summary-card fail">
+                <div class="number">{{FAILED_TESTS}}</div>
+                <div class="label">실패</div>
+            </div>
+            <div class="summary-card skip">
+                <div class="number">{{SKIPPED_TESTS}}</div>
+                <div class="label">스킵</div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-section">
+            <h3 style="margin-bottom: 16px; font-size: 16px;">테스트 통과율: {{PASS_RATE}}%</h3>
+            <div class="progress-bar">
+                <div class="progress-pass" style="width: {{PASS_PERCENT}}%"></div>
+                <div class="progress-fail" style="width: {{FAIL_PERCENT}}%"></div>
+                <div class="progress-skip" style="width: {{SKIP_PERCENT}}%"></div>
+            </div>
+            <div class="progress-legend">
+                <div class="legend-item">
+                    <div class="legend-dot pass"></div>
+                    <span>통과 ({{PASSED_TESTS}})</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot fail"></div>
+                    <span>실패 ({{FAILED_TESTS}})</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot skip"></div>
+                    <span>스킵 ({{SKIPPED_TESTS}})</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('results')">테스트 결과</button>
+            <button class="tab" onclick="showTab('failures')">실패 상세</button>
+            <button class="tab" onclick="showTab('screenshots')">스크린샷</button>
+            <button class="tab" onclick="showTab('requirements')">요구사항 커버리지</button>
+        </div>
+
+        <!-- Test Results Tab -->
+        <div id="results" class="tab-content active">
+            <div class="section">
+                <div class="section-header">
+                    <span>📋</span> 시나리오별 테스트 결과
+                </div>
+                <div class="section-content">
+                    <table class="test-table">
+                        <thead>
+                            <tr>
+                                <th>테스트 ID</th>
+                                <th>시나리오</th>
+                                <th>상태</th>
+                                <th>실행시간</th>
+                                <th>요구사항</th>
+                                <th>스크린샷</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{TEST_ROWS}}
+                            <!-- Example rows - Replace with actual data -->
+                            <!--
+                            <tr>
+                                <td><code>E2E-001</code></td>
+                                <td>프로젝트 목록 조회</td>
+                                <td><span class="status-badge pass">✓ PASS</span></td>
+                                <td>2.5s</td>
+                                <td>FR-001, FR-002</td>
+                                <td><a href="#screenshot-e2e-001">보기</a></td>
+                            </tr>
+                            <tr>
+                                <td><code>E2E-002</code></td>
+                                <td>프로젝트 생성 성공</td>
+                                <td><span class="status-badge pass">✓ PASS</span></td>
+                                <td>3.2s</td>
+                                <td>FR-003</td>
+                                <td><a href="#screenshot-e2e-002">보기</a></td>
+                            </tr>
+                            <tr>
+                                <td><code>E2E-003</code></td>
+                                <td>중복 이름 오류 표시</td>
+                                <td><span class="status-badge fail">✗ FAIL</span></td>
+                                <td>2.1s</td>
+                                <td>BR-001</td>
+                                <td><a href="#screenshot-e2e-003">보기</a></td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Failures Tab -->
+        <div id="failures" class="tab-content">
+            <div class="section">
+                <div class="section-header">
+                    <span>❌</span> 실패한 테스트 상세
+                </div>
+                <div class="section-content">
+                    {{FAILURE_DETAILS}}
+                    <!-- Example failure card - Replace with actual data -->
+                    <!--
+                    <div class="failure-card">
+                        <div class="failure-header">
+                            <span class="status-badge fail">✗ FAIL</span>
+                            <span class="failure-title">E2E-003: 중복 이름 오류 표시</span>
+                        </div>
+                        <div class="failure-step">
+                            <strong>실패 단계:</strong> 에러 메시지 검증
+                        </div>
+                        <div class="failure-error">
+Error: Locator timeout
+  at expect(page.getByTestId('error-message')).toBeVisible()
+  Waiting for element to be visible
+  Received: element not found
+
+Call log:
+  - waiting for getByTestId('error-message')
+                        </div>
+                        <div class="failure-screenshot">
+                            <strong>실패 시점 스크린샷:</strong>
+                            <img src="screenshots/e2e-003-fail.png" alt="E2E-003 실패 스크린샷" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+                    -->
+                    <p style="color: var(--color-text-secondary); text-align: center; padding: 40px;">
+                        {{NO_FAILURES_MESSAGE}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screenshots Tab -->
+        <div id="screenshots" class="tab-content">
+            <div class="section">
+                <div class="section-header">
+                    <span>📸</span> 테스트 스크린샷
+                </div>
+                <div class="section-content">
+                    <div class="screenshot-gallery">
+                        {{SCREENSHOTS}}
+                        <!-- Example screenshot cards - Replace with actual data -->
+                        <!--
+                        <div class="screenshot-card" id="screenshot-e2e-001">
+                            <img src="screenshots/e2e-001-list.png" alt="E2E-001 스크린샷" onclick="openModal(this.src)">
+                            <div class="screenshot-info">
+                                <div class="screenshot-title">E2E-001: 프로젝트 목록 조회</div>
+                                <div class="screenshot-desc">정상적으로 목록이 표시된 화면</div>
+                                <div class="screenshot-status">
+                                    <span class="status-badge pass">✓ PASS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-card" id="screenshot-e2e-002">
+                            <img src="screenshots/e2e-002-create.png" alt="E2E-002 스크린샷" onclick="openModal(this.src)">
+                            <div class="screenshot-info">
+                                <div class="screenshot-title">E2E-002: 프로젝트 생성 성공</div>
+                                <div class="screenshot-desc">생성 완료 후 목록에 추가된 화면</div>
+                                <div class="screenshot-status">
+                                    <span class="status-badge pass">✓ PASS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-card" id="screenshot-e2e-003">
+                            <img src="screenshots/e2e-003-fail.png" alt="E2E-003 스크린샷" onclick="openModal(this.src)">
+                            <div class="screenshot-info">
+                                <div class="screenshot-title">E2E-003: 중복 이름 오류</div>
+                                <div class="screenshot-desc">실패 시점의 화면 상태</div>
+                                <div class="screenshot-status">
+                                    <span class="status-badge fail">✗ FAIL</span>
+                                </div>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Requirements Coverage Tab -->
+        <div id="requirements" class="tab-content">
+            <div class="section">
+                <div class="section-header">
+                    <span>📊</span> 요구사항 커버리지
+                </div>
+                <div class="section-content">
+                    <h4 style="margin-bottom: 16px; color: var(--color-text-secondary);">기능 요구사항 (FR)</h4>
+                    <div class="coverage-grid" style="margin-bottom: 24px;">
+                        {{FR_COVERAGE}}
+                        <!-- Example coverage items - Replace with actual data -->
+                        <!--
+                        <div class="coverage-item">
+                            <div class="coverage-icon pass">✓</div>
+                            <div class="coverage-details">
+                                <div class="coverage-id">FR-001</div>
+                                <div class="coverage-desc">프로젝트 목록 조회 → E2E-001</div>
+                            </div>
+                        </div>
+                        <div class="coverage-item">
+                            <div class="coverage-icon pass">✓</div>
+                            <div class="coverage-details">
+                                <div class="coverage-id">FR-002</div>
+                                <div class="coverage-desc">프로젝트 상세 조회 → E2E-001</div>
+                            </div>
+                        </div>
+                        <div class="coverage-item">
+                            <div class="coverage-icon fail">✗</div>
+                            <div class="coverage-details">
+                                <div class="coverage-id">FR-003</div>
+                                <div class="coverage-desc">프로젝트 생성 → E2E-002</div>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+
+                    <h4 style="margin-bottom: 16px; color: var(--color-text-secondary);">비즈니스 규칙 (BR)</h4>
+                    <div class="coverage-grid">
+                        {{BR_COVERAGE}}
+                        <!-- Example coverage items - Replace with actual data -->
+                        <!--
+                        <div class="coverage-item">
+                            <div class="coverage-icon pass">✓</div>
+                            <div class="coverage-details">
+                                <div class="coverage-id">BR-001</div>
+                                <div class="coverage-desc">이름 고유성 검증 → E2E-003</div>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Generated by jjiban E2E Test Runner | {{GENERATION_TIME}}</p>
+            <p>Playwright {{PLAYWRIGHT_VERSION}} | {{BROWSER_INFO}}</p>
+        </footer>
+    </div>
+
+    <!-- Modal for full-size screenshots -->
+    <div class="modal" id="screenshotModal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="Full size screenshot">
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        function openModal(src) {
+            const modal = document.getElementById('screenshotModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.classList.add('active');
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('screenshotModal');
+            modal.classList.remove('active');
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Prevent modal close when clicking on image
+        document.getElementById('modalImage').addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>
+<!--
+author: 장종익 
+Template Version History:
+- v1.0.0 (2026-12-07): 신규 생성
+  - 현재 시스템(wf:e2e)에 맞는 템플릿
+-->

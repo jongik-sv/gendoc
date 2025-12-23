@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 56" width="1400" height="56">
+  <!-- Header Background -->
+  <rect width="1400" height="56" fill="#16213e"/>
+
+  <!-- Logo (텍스트만) -->
+  <text x="24" y="36" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6">jjiban</text>
+
+  <!-- Navigation Menu -->
+  <g font-family="Arial, sans-serif" font-size="12">
+    <!-- Dashboard (비활성) -->
+    <g opacity="0.6">
+      <text x="120" y="36" fill="#888">대시보드</text>
+    </g>
+
+    <!-- Kanban (비활성) -->
+    <g opacity="0.6">
+      <text x="200" y="36" fill="#888">칸반</text>
+    </g>
+
+    <!-- WBS (활성 - underline 스타일) -->
+    <g>
+      <text x="260" y="36" fill="#3b82f6" font-weight="bold">WBS</text>
+      <rect x="260" y="48" width="28" height="3" fill="#3b82f6" rx="1"/>
+    </g>
+
+    <!-- Gantt (비활성) -->
+    <g opacity="0.6">
+      <text x="310" y="36" fill="#888">Gantt</text>
+    </g>
+  </g>
+
+  <!-- Project Name (미선택 상태) -->
+  <text x="1150" y="36" font-family="Arial, sans-serif" font-size="14" fill="#888" font-style="italic">프로젝트를 선택하세요</text>
+
+  <!-- Bottom Border -->
+  <line x1="0" y1="55" x2="1400" y2="55" stroke="#3d3d5c" stroke-width="1"/>
+
+  <!-- Annotation -->
+  <g font-family="Arial, sans-serif" font-size="8" fill="#888" opacity="0.8">
+    <line x1="1220" y1="42" x2="1220" y2="48" stroke="#888" stroke-width="1"/>
+    <text x="1180" y="52">프로젝트 미선택 상태</text>
+  </g>
+</svg>

@@ -1,0 +1,527 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100">
+  <defs>
+    <style>
+      .bg { fill: #1a1a2e; }
+      .header { fill: #16213e; }
+      .header-text { fill: #e8e8e8; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .sidebar { fill: #0f0f23; }
+      .sidebar-header { fill: #16213e; }
+      .row-even { fill: #0f0f23; }
+      .row-odd { fill: #1e1e38; }
+      .row-wp { fill: #1a2744; }
+      .row-act { fill: #1a3328; }
+      .grid-line { stroke: #2d2d44; stroke-width: 1; }
+      .grid-line-month { stroke: #3d3d5c; stroke-width: 2; }
+      .month-text { fill: #888; font-family: Arial, sans-serif; font-size: 11px; }
+      .week-text { fill: #666; font-family: Arial, sans-serif; font-size: 9px; }
+      .item-text { fill: #e8e8e8; font-family: Arial, sans-serif; font-size: 11px; }
+      .item-id { fill: #888; font-family: Arial, sans-serif; font-size: 9px; }
+      .expand-icon { fill: #888; font-family: Arial, sans-serif; font-size: 12px; }
+      .bar { rx: 3; }
+      .bar-wp { fill: #3b82f6; opacity: 0.8; }
+      .bar-wp-critical { fill: #ef4444; opacity: 0.8; }
+      .bar-act { fill: #22c55e; opacity: 0.7; }
+      .bar-task { fill: #6366f1; height: 14px; }
+      .bar-task-infra { fill: #f59e0b; }
+      .bar-task-progress { fill: rgba(255,255,255,0.4); }
+      .dependency { stroke: #6366f1; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+      .dependency-critical { stroke: #ef4444; stroke-width: 2; }
+      .logo { fill: #3b82f6; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+      .nav-item { fill: #888; font-family: Arial, sans-serif; font-size: 12px; }
+      .nav-active { fill: #3b82f6; }
+      .legend-text { fill: #aaa; font-family: Arial, sans-serif; font-size: 10px; }
+      .view-btn { fill: #16213e; stroke: #3b82f6; rx: 4; }
+      .view-btn-active { fill: #3b82f6; }
+      .view-text { fill: #888; font-family: Arial, sans-serif; font-size: 10px; }
+      .view-text-active { fill: #fff; }
+      .progress-text { fill: #fff; font-family: Arial, sans-serif; font-size: 8px; }
+      .tree-line { stroke: #3d3d5c; stroke-width: 1; }
+      .icon-wp { fill: #3b82f6; }
+      .icon-act { fill: #22c55e; }
+      .icon-task { fill: #f59e0b; }
+      .status-tag { font-family: Arial, sans-serif; font-size: 8px; fill: white; }
+      .today-line { stroke: #ef4444; stroke-width: 2; stroke-dasharray: 4,4; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#6366f1"/>
+    </marker>
+    <marker id="arrowhead-critical" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1600" height="1100"/>
+
+  <!-- Header -->
+  <rect class="header" width="1600" height="56"/>
+  <text class="logo" x="24" y="36">jjiban</text>
+
+  <!-- Navigation -->
+  <text class="nav-item" x="120" y="36">대시보드</text>
+  <text class="nav-item" x="200" y="36">칸반</text>
+  <text class="nav-item" x="260" y="36">WBS</text>
+  <text class="nav-item nav-active" x="300" y="36">Gantt</text>
+  <rect x="300" y="48" width="30" height="3" fill="#3b82f6" rx="1"/>
+
+  <!-- Project Title -->
+  <text class="header-text" x="400" y="36">jjiban - AI 기반 프로젝트 관리 도구</text>
+
+  <!-- View Mode Buttons -->
+  <g transform="translate(24, 68)">
+    <rect class="view-btn" x="0" y="0" width="40" height="24"/>
+    <text class="view-text" x="12" y="16">일</text>
+
+    <rect class="view-btn view-btn-active" x="48" y="0" width="40" height="24"/>
+    <text class="view-text view-text-active" x="60" y="16">주</text>
+
+    <rect class="view-btn" x="96" y="0" width="40" height="24"/>
+    <text class="view-text" x="108" y="16">월</text>
+
+    <rect class="view-btn" x="144" y="0" width="50" height="24"/>
+    <text class="view-text" x="152" y="16">분기</text>
+
+    <text class="nav-item" x="220" y="16">모두 펼치기</text>
+    <text class="nav-item" x="300" y="16">모두 접기</text>
+  </g>
+
+  <!-- Progress Summary -->
+  <text class="legend-text" x="1300" y="84">프로젝트 기간: 2026-01-15 ~ 2026-07-15</text>
+
+  <!-- Sidebar - WBS Tree -->
+  <rect class="sidebar" x="0" y="100" width="340" height="1000"/>
+  <rect class="sidebar-header" x="0" y="100" width="340" height="32"/>
+  <text class="item-text" x="16" y="120">WBS 항목</text>
+  <text class="item-text" x="260" y="120">기간</text>
+  <text class="item-text" x="300" y="120">상태</text>
+
+  <!-- Timeline Header -->
+  <rect class="sidebar-header" x="340" y="100" width="1260" height="32"/>
+
+  <!-- Month Headers -->
+  <text class="month-text" x="380" y="120">2026년 1월</text>
+  <text class="month-text" x="560" y="120">2월</text>
+  <text class="month-text" x="740" y="120">3월</text>
+  <text class="month-text" x="920" y="120">4월</text>
+  <text class="month-text" x="1100" y="120">5월</text>
+  <text class="month-text" x="1280" y="120">6월</text>
+  <text class="month-text" x="1460" y="120">7월</text>
+
+  <!-- Grid Lines (Monthly) -->
+  <line class="grid-line-month" x1="520" y1="132" x2="520" y2="1000"/>
+  <line class="grid-line-month" x1="700" y1="132" x2="700" y2="1000"/>
+  <line class="grid-line-month" x1="880" y1="132" x2="880" y2="1000"/>
+  <line class="grid-line-month" x1="1060" y1="132" x2="1060" y2="1000"/>
+  <line class="grid-line-month" x1="1240" y1="132" x2="1240" y2="1000"/>
+  <line class="grid-line-month" x1="1420" y1="132" x2="1420" y2="1000"/>
+
+  <!-- Weekly Grid Lines -->
+  <line class="grid-line" x1="385" y1="132" x2="385" y2="1000"/>
+  <line class="grid-line" x1="430" y1="132" x2="430" y2="1000"/>
+  <line class="grid-line" x1="475" y1="132" x2="475" y2="1000"/>
+  <line class="grid-line" x1="565" y1="132" x2="565" y2="1000"/>
+  <line class="grid-line" x1="610" y1="132" x2="610" y2="1000"/>
+  <line class="grid-line" x1="655" y1="132" x2="655" y2="1000"/>
+
+  <!-- WBS Tree & Gantt Bars -->
+  <g transform="translate(0, 132)">
+    <!-- Row Height: 28px -->
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-08: Data & Storage (Expanded) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="0" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="18">▼</text>
+    <rect class="icon-wp" x="24" y="8" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="17" font-size="8">W</text>
+    <text class="item-text" x="42" y="18" font-weight="bold">WP-08: Data &amp; Storage</text>
+    <text class="item-id" x="260" y="18">14일</text>
+    <rect fill="#f59e0b" x="300" y="8" width="28" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="17">25%</text>
+    <!-- WP Bar -->
+    <rect class="bar bar-wp-critical" x="352" y="6" width="84" height="16" rx="3"/>
+    <text class="progress-text" x="386" y="17">WP-08</text>
+
+    <!-- TSK-08-01 -->
+    <rect class="row-odd" x="0" y="28" width="1600" height="24"/>
+    <line class="tree-line" x1="30" y1="28" x2="30" y2="40"/>
+    <line class="tree-line" x1="30" y1="40" x2="42" y2="40"/>
+    <rect class="icon-task" x="46" y="34" width="10" height="10" rx="2"/>
+    <text fill="white" x="48" y="42" font-size="7">T</text>
+    <text class="item-id" x="62" y="44">TSK-08-01</text>
+    <text class="item-text" x="130" y="44">디렉토리 구조 초기화</text>
+    <text class="item-id" x="260" y="44">3일</text>
+    <rect fill="#3b82f6" x="300" y="34" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="304" y="43">[bd]</text>
+    <!-- Task Bar -->
+    <rect class="bar bar-task-infra" x="352" y="34" width="18" height="12" rx="2"/>
+
+    <!-- TSK-08-02 -->
+    <rect class="row-even" x="0" y="52" width="1600" height="24"/>
+    <line class="tree-line" x1="30" y1="52" x2="30" y2="64"/>
+    <line class="tree-line" x1="30" y1="64" x2="42" y2="64"/>
+    <rect class="icon-task" x="46" y="58" width="10" height="10" rx="2"/>
+    <text fill="white" x="48" y="66" font-size="7">T</text>
+    <text class="item-id" x="62" y="68">TSK-08-02</text>
+    <text class="item-text" x="130" y="68">JSON 파일 CRUD 서비스</text>
+    <text class="item-id" x="260" y="68">4일</text>
+    <rect fill="#f59e0b" x="300" y="58" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="304" y="67">[dd]</text>
+    <!-- Task Bar -->
+    <rect class="bar bar-task" x="370" y="58" width="24" height="12" rx="2"/>
+
+    <!-- TSK-08-03 -->
+    <rect class="row-odd" x="0" y="76" width="1600" height="24"/>
+    <line class="tree-line" x1="30" y1="76" x2="30" y2="88"/>
+    <line class="tree-line" x1="30" y1="88" x2="42" y2="88"/>
+    <rect class="icon-task" x="46" y="82" width="10" height="10" rx="2"/>
+    <text fill="white" x="48" y="90" font-size="7">T</text>
+    <text class="item-id" x="62" y="92">TSK-08-03</text>
+    <text class="item-text" x="130" y="92">index.json 자동 생성</text>
+    <text class="item-id" x="260" y="92">4일</text>
+    <rect fill="#f59e0b" x="300" y="82" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="304" y="91">[dd]</text>
+    <!-- Task Bar -->
+    <rect class="bar bar-task" x="394" y="82" width="24" height="12" rx="2"/>
+
+    <!-- TSK-08-04 -->
+    <rect class="row-even" x="0" y="100" width="1600" height="24"/>
+    <line class="tree-line" x1="30" y1="100" x2="30" y2="112"/>
+    <line class="tree-line" x1="30" y1="112" x2="42" y2="112"/>
+    <rect class="icon-task" x="46" y="106" width="10" height="10" rx="2"/>
+    <text fill="white" x="48" y="114" font-size="7">T</text>
+    <text class="item-id" x="62" y="116">TSK-08-04</text>
+    <text class="item-text" x="130" y="116">데이터 유효성 검증</text>
+    <text class="item-id" x="260" y="116">3일</text>
+    <rect fill="#f59e0b" x="300" y="106" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="304" y="115">[dd]</text>
+    <!-- Task Bar -->
+    <rect class="bar bar-task" x="418" y="106" width="18" height="12" rx="2"/>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-01: Issue Management (Expanded with ACT) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="132" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="150">▼</text>
+    <rect class="icon-wp" x="24" y="140" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="149" font-size="8">W</text>
+    <text class="item-text" x="42" y="150" font-weight="bold">WP-01: Issue Management</text>
+    <text class="item-id" x="260" y="150">31일</text>
+    <rect fill="#6b7280" x="300" y="140" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="149">0%</text>
+    <!-- WP Bar -->
+    <rect class="bar bar-wp-critical" x="352" y="138" width="186" height="16" rx="3"/>
+    <text class="progress-text" x="430" y="149">WP-01</text>
+
+    <!-- ACT-01-01: Entity CRUD -->
+    <rect class="row-act" x="0" y="160" width="1600" height="26"/>
+    <line class="tree-line" x1="30" y1="160" x2="30" y2="173"/>
+    <line class="tree-line" x1="30" y1="173" x2="42" y2="173"/>
+    <text class="expand-icon" x="46" y="177">▼</text>
+    <rect class="icon-act" x="62" y="167" width="10" height="10" rx="2"/>
+    <text fill="white" x="64" y="175" font-size="7">A</text>
+    <text class="item-text" x="78" y="177">ACT-01-01: Entity CRUD 구현</text>
+    <text class="item-id" x="260" y="177">20일</text>
+    <rect fill="#6b7280" x="300" y="167" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="176">0%</text>
+    <!-- ACT Bar -->
+    <rect class="bar bar-act" x="352" y="165" width="120" height="14" rx="3"/>
+
+    <!-- TSK-01-01-01 -->
+    <rect class="row-odd" x="0" y="186" width="1600" height="24"/>
+    <line class="tree-line" x1="68" y1="186" x2="68" y2="198"/>
+    <line class="tree-line" x1="68" y1="198" x2="80" y2="198"/>
+    <rect class="icon-task" x="84" y="192" width="10" height="10" rx="2"/>
+    <text fill="white" x="86" y="200" font-size="7">T</text>
+    <text class="item-id" x="100" y="202">TSK-01-01-01</text>
+    <text class="item-text" x="175" y="202">Project CRUD 구현</text>
+    <text class="item-id" x="260" y="202">5일</text>
+    <rect fill="#6b7280" x="300" y="192" width="18" height="12" rx="2"/>
+    <text class="status-tag" x="304" y="201">[ ]</text>
+    <!-- Task Bar -->
+    <rect class="bar bar-task" x="352" y="192" width="30" height="12" rx="2"/>
+
+    <!-- TSK-01-01-02 -->
+    <rect class="row-even" x="0" y="210" width="1600" height="24"/>
+    <line class="tree-line" x1="68" y1="210" x2="68" y2="222"/>
+    <line class="tree-line" x1="68" y1="222" x2="80" y2="222"/>
+    <rect class="icon-task" x="84" y="216" width="10" height="10" rx="2"/>
+    <text fill="white" x="86" y="224" font-size="7">T</text>
+    <text class="item-id" x="100" y="226">TSK-01-01-02</text>
+    <text class="item-text" x="175" y="226">Work Package CRUD</text>
+    <text class="item-id" x="260" y="226">5일</text>
+    <rect fill="#6b7280" x="300" y="216" width="18" height="12" rx="2"/>
+    <text class="status-tag" x="304" y="225">[ ]</text>
+    <!-- Task Bar -->
+    <rect class="bar bar-task" x="382" y="216" width="30" height="12" rx="2"/>
+
+    <!-- TSK-01-01-03 -->
+    <rect class="row-odd" x="0" y="234" width="1600" height="24"/>
+    <line class="tree-line" x1="68" y1="234" x2="68" y2="246"/>
+    <line class="tree-line" x1="68" y1="246" x2="80" y2="246"/>
+    <rect class="icon-task" x="84" y="240" width="10" height="10" rx="2"/>
+    <text fill="white" x="86" y="248" font-size="7">T</text>
+    <text class="item-id" x="100" y="250">TSK-01-01-03</text>
+    <text class="item-text" x="175" y="250">Activity CRUD 구현</text>
+    <text class="item-id" x="260" y="250">5일</text>
+    <rect fill="#6b7280" x="300" y="240" width="18" height="12" rx="2"/>
+    <text class="status-tag" x="304" y="249">[ ]</text>
+    <!-- Task Bar -->
+    <rect class="bar bar-task" x="412" y="240" width="30" height="12" rx="2"/>
+
+    <!-- TSK-01-01-04 -->
+    <rect class="row-even" x="0" y="258" width="1600" height="24"/>
+    <line class="tree-line" x1="68" y1="258" x2="68" y2="270"/>
+    <line class="tree-line" x1="68" y1="270" x2="80" y2="270"/>
+    <rect class="icon-task" x="84" y="264" width="10" height="10" rx="2"/>
+    <text fill="white" x="86" y="272" font-size="7">T</text>
+    <text class="item-id" x="100" y="274">TSK-01-01-04</text>
+    <text class="item-text" x="175" y="274">Task CRUD 구현</text>
+    <text class="item-id" x="260" y="274">5일</text>
+    <rect fill="#6b7280" x="300" y="264" width="18" height="12" rx="2"/>
+    <text class="status-tag" x="304" y="273">[ ]</text>
+    <!-- Task Bar -->
+    <rect class="bar bar-task" x="442" y="264" width="30" height="12" rx="2"/>
+
+    <!-- ACT-01-02: Business Logic -->
+    <rect class="row-act" x="0" y="282" width="1600" height="26"/>
+    <line class="tree-line" x1="30" y1="282" x2="30" y2="295"/>
+    <line class="tree-line" x1="30" y1="295" x2="42" y2="295"/>
+    <text class="expand-icon" x="46" y="299">▼</text>
+    <rect class="icon-act" x="62" y="289" width="10" height="10" rx="2"/>
+    <text fill="white" x="64" y="297" font-size="7">A</text>
+    <text class="item-text" x="78" y="299">ACT-01-02: Business Logic 구현</text>
+    <text class="item-id" x="260" y="299">11일</text>
+    <rect fill="#6b7280" x="300" y="289" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="298">0%</text>
+    <!-- ACT Bar -->
+    <rect class="bar bar-act" x="472" y="287" width="66" height="14" rx="3"/>
+
+    <!-- TSK-01-02-01 -->
+    <rect class="row-odd" x="0" y="308" width="1600" height="24"/>
+    <line class="tree-line" x1="68" y1="308" x2="68" y2="320"/>
+    <line class="tree-line" x1="68" y1="320" x2="80" y2="320"/>
+    <rect class="icon-task" x="84" y="314" width="10" height="10" rx="2"/>
+    <text fill="white" x="86" y="322" font-size="7">T</text>
+    <text class="item-id" x="100" y="324">TSK-01-02-01</text>
+    <text class="item-text" x="175" y="324">계층 관계 검증 로직</text>
+    <text class="item-id" x="260" y="324">6일</text>
+    <rect fill="#6b7280" x="300" y="314" width="18" height="12" rx="2"/>
+    <text class="status-tag" x="304" y="323">[ ]</text>
+    <!-- Task Bar -->
+    <rect class="bar bar-task" x="472" y="314" width="36" height="12" rx="2"/>
+
+    <!-- TSK-01-02-02 -->
+    <rect class="row-even" x="0" y="332" width="1600" height="24"/>
+    <line class="tree-line" x1="68" y1="332" x2="68" y2="344"/>
+    <line class="tree-line" x1="68" y1="344" x2="80" y2="344"/>
+    <rect class="icon-task" x="84" y="338" width="10" height="10" rx="2"/>
+    <text fill="white" x="86" y="346" font-size="7">T</text>
+    <text class="item-id" x="100" y="348">TSK-01-02-02</text>
+    <text class="item-text" x="175" y="348">진행률 자동 계산</text>
+    <text class="item-id" x="260" y="348">5일</text>
+    <rect fill="#6b7280" x="300" y="338" width="18" height="12" rx="2"/>
+    <text class="status-tag" x="304" y="347">[ ]</text>
+    <!-- Task Bar -->
+    <rect class="bar bar-task" x="508" y="338" width="30" height="12" rx="2"/>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-02: Workflow Engine (Collapsed) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="364" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="382">▶</text>
+    <rect class="icon-wp" x="24" y="372" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="381" font-size="8">W</text>
+    <text class="item-text" x="42" y="382" font-weight="bold">WP-02: Workflow Engine</text>
+    <text class="item-id" x="260" y="382">28일</text>
+    <rect fill="#6b7280" x="300" y="372" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="381">0%</text>
+    <!-- WP Bar -->
+    <rect class="bar bar-wp-critical" x="538" y="370" width="168" height="16" rx="3"/>
+    <text class="progress-text" x="606" y="381">WP-02</text>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-03: Document Management (Collapsed) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="396" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="414">▶</text>
+    <rect class="icon-wp" x="24" y="404" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="413" font-size="8">W</text>
+    <text class="item-text" x="42" y="414" font-weight="bold">WP-03: Document Management</text>
+    <text class="item-id" x="260" y="414">24일</text>
+    <rect fill="#6b7280" x="300" y="404" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="413">0%</text>
+    <!-- WP Bar -->
+    <rect class="bar bar-wp-critical" x="706" y="402" width="144" height="16" rx="3"/>
+    <text class="progress-text" x="762" y="413">WP-03</text>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-04: LLM Integration (Collapsed) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="428" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="446">▶</text>
+    <rect class="icon-wp" x="24" y="436" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="445" font-size="8">W</text>
+    <text class="item-text" x="42" y="446" font-weight="bold">WP-04: LLM Integration</text>
+    <text class="item-id" x="260" y="446">21일</text>
+    <rect fill="#6b7280" x="300" y="436" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="445">0%</text>
+    <!-- WP Bar -->
+    <rect class="bar bar-wp-critical" x="850" y="434" width="126" height="16" rx="3"/>
+    <text class="progress-text" x="897" y="445">WP-04</text>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-05: Kanban Board (Collapsed) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="460" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="478">▶</text>
+    <rect class="icon-wp" x="24" y="468" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="477" font-size="8">W</text>
+    <text class="item-text" x="42" y="478" font-weight="bold">WP-05: Kanban Board</text>
+    <text class="item-id" x="260" y="478">21일</text>
+    <rect fill="#6b7280" x="300" y="468" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="477">0%</text>
+    <!-- WP Bar -->
+    <rect class="bar bar-wp-critical" x="976" y="466" width="126" height="16" rx="3"/>
+    <text class="progress-text" x="1023" y="477">WP-05</text>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-06: WBS Tree (Collapsed) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="492" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="510">▶</text>
+    <rect class="icon-wp" x="24" y="500" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="509" font-size="8">W</text>
+    <text class="item-text" x="42" y="510" font-weight="bold">WP-06: WBS Tree</text>
+    <text class="item-id" x="260" y="510">14일</text>
+    <rect fill="#6b7280" x="300" y="500" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="509">0%</text>
+    <!-- WP Bar -->
+    <rect class="bar bar-wp" x="1102" y="498" width="84" height="16" rx="3"/>
+    <text class="progress-text" x="1128" y="509">WP-06</text>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-07: Gantt Chart (Collapsed) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="524" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="542">▶</text>
+    <rect class="icon-wp" x="24" y="532" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="541" font-size="8">W</text>
+    <text class="item-text" x="42" y="542" font-weight="bold">WP-07: Gantt Chart</text>
+    <text class="item-id" x="260" y="542">21일</text>
+    <rect fill="#6b7280" x="300" y="532" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="541">0%</text>
+    <!-- WP Bar -->
+    <rect class="bar" x="1186" y="530" width="126" height="16" rx="3" fill="#f59e0b" opacity="0.7"/>
+    <text class="progress-text" x="1233" y="541">WP-07</text>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-10: Common UI (Collapsed) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="556" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="574">▶</text>
+    <rect class="icon-wp" x="24" y="564" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="573" font-size="8">W</text>
+    <text class="item-text" x="42" y="574" font-weight="bold">WP-10: Common UI</text>
+    <text class="item-id" x="260" y="574">14일</text>
+    <rect fill="#6b7280" x="300" y="564" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="573">0%</text>
+    <!-- WP Bar -->
+    <rect class="bar bar-wp" x="436" y="562" width="84" height="16" rx="3"/>
+    <text class="progress-text" x="462" y="573">WP-10</text>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-09: CLI & Execution (Collapsed) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="588" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="606">▶</text>
+    <rect class="icon-wp" x="24" y="596" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="605" font-size="8">W</text>
+    <text class="item-text" x="42" y="606" font-weight="bold">WP-09: CLI &amp; Execution</text>
+    <text class="item-id" x="260" y="606">14일</text>
+    <rect fill="#6b7280" x="300" y="596" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="605">0%</text>
+    <!-- WP Bar -->
+    <rect class="bar bar-wp" x="1312" y="594" width="84" height="16" rx="3"/>
+    <text class="progress-text" x="1338" y="605">WP-09</text>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- WP-11: Testing & Performance (Collapsed) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <rect class="row-wp" x="0" y="620" width="1600" height="28"/>
+    <text class="expand-icon" x="8" y="638">▶</text>
+    <rect class="icon-wp" x="24" y="628" width="12" height="12" rx="2"/>
+    <text fill="white" x="26" y="637" font-size="8">W</text>
+    <text class="item-text" x="42" y="638" font-weight="bold">WP-11: Testing &amp; Performance</text>
+    <text class="item-id" x="260" y="638">7일</text>
+    <rect fill="#6b7280" x="300" y="628" width="22" height="12" rx="2"/>
+    <text class="status-tag" x="306" y="637">0%</text>
+    <!-- WP Bar -->
+    <rect class="bar bar-wp" x="1396" y="626" width="42" height="16" rx="3"/>
+    <text class="progress-text" x="1402" y="637">WP-11</text>
+
+    <!-- Dependency Arrows -->
+    <!-- WP-01 → WP-02 -->
+    <path class="dependency dependency-critical" d="M538 146 L538 378" marker-end="url(#arrowhead-critical)"/>
+
+    <!-- WP-02 → WP-03 -->
+    <path class="dependency dependency-critical" d="M706 378 L706 410" marker-end="url(#arrowhead-critical)"/>
+
+    <!-- WP-03 → WP-04 -->
+    <path class="dependency dependency-critical" d="M850 410 L850 442" marker-end="url(#arrowhead-critical)"/>
+
+    <!-- WP-04 → WP-05 -->
+    <path class="dependency dependency-critical" d="M976 442 L976 474" marker-end="url(#arrowhead-critical)"/>
+
+    <!-- WP-01 → WP-06 -->
+    <path class="dependency" d="M538 146 Q820 200 1102 506" marker-end="url(#arrowhead)"/>
+
+    <!-- WP-06 → WP-07 -->
+    <path class="dependency" d="M1186 506 L1186 538" marker-end="url(#arrowhead)"/>
+
+    <!-- WP-08 → WP-09 -->
+    <path class="dependency" d="M436 14 Q874 50 1312 602" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(24, 820)">
+    <text class="legend-text" x="0" y="0" font-weight="bold">범례:</text>
+
+    <rect class="icon-wp" x="50" y="-10" width="14" height="14" rx="2"/>
+    <text class="legend-text" x="70" y="0">Work Package</text>
+
+    <rect class="icon-act" x="160" y="-10" width="14" height="14" rx="2"/>
+    <text class="legend-text" x="180" y="0">Activity</text>
+
+    <rect class="icon-task" x="240" y="-10" width="14" height="14" rx="2"/>
+    <text class="legend-text" x="260" y="0">Task</text>
+
+    <rect fill="#ef4444" x="310" y="-10" width="20" height="12" rx="2" opacity="0.8"/>
+    <text class="legend-text" x="336" y="0">Critical Path</text>
+
+    <rect fill="#3b82f6" x="420" y="-10" width="20" height="12" rx="2" opacity="0.8"/>
+    <text class="legend-text" x="446" y="0">일반 WP</text>
+
+    <rect fill="#22c55e" x="510" y="-10" width="20" height="12" rx="2" opacity="0.7"/>
+    <text class="legend-text" x="536" y="0">Activity</text>
+
+    <rect fill="#6366f1" x="590" y="-10" width="20" height="12" rx="2"/>
+    <text class="legend-text" x="616" y="0">Task (dev)</text>
+
+    <rect fill="#f59e0b" x="680" y="-10" width="20" height="12" rx="2"/>
+    <text class="legend-text" x="706" y="0">Task (infra)</text>
+  </g>
+
+  <!-- Critical Path Info -->
+  <g transform="translate(24, 850)">
+    <text class="item-text" x="0" y="0">📌 Critical Path: WP-08 → WP-01 → WP-02 → WP-03 → WP-04 → WP-05</text>
+  </g>
+
+  <!-- Summary Box -->
+  <g transform="translate(1300, 820)">
+    <rect fill="#16213e" x="0" y="-30" width="180" height="70" rx="8"/>
+    <text class="item-text" x="16" y="-10">📊 프로젝트 현황</text>
+    <text class="legend-text" x="16" y="8">WP: 11 | ACT: 2 | TSK: 50</text>
+    <text class="legend-text" x="16" y="26">전체 진행률: 0%</text>
+  </g>
+</svg>
